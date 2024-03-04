@@ -1,0 +1,18 @@
+.header {
+  background: #FFFFFF;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  display: grid;
+  left: 60px;
+}
+
+.menu {
+  display: grid;
+  align-items: center;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

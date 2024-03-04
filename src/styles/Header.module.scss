@@ -1,0 +1,17 @@
+@import "basic/variables.color";
+
+.header {
+  background: $basic-color-white;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: space-between ;
+  align-items: center;
+  .logo{
+    display: grid;
+    left: 60px;
+  }
+}
+.menu {
+   display: grid;
+  align-items: center;
+}

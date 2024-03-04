@@ -1,0 +1,23 @@
+@import "basic/variables.color";
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter-Regular'), url("../styles/fonts/Inter/static/Inter-Regular.ttf") format("ttf");
+}
+.footer {
+  display: grid;
+  justify-content: end;
+  background-color: $basic-color-turquoise;
+  width: auto;
+  height: auto;
+  list-style: none;
+  ul {
+    size: 14px;
+    padding-right: 20px;
+    color: $basic-color-white;
+    list-style: none;
+    li {
+      font-family: Inter, sans-serif;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "sourceMap": true,
+    "strict": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+  },
+  "include": ["src", "src/custom.d.ts"]
+}
