@@ -7,7 +7,7 @@ import NavigationMenu from "../UI/NavigationMenu";
 const Header = () => {
     return (
         <div className={styles.header}>
-           <LogoUpper/>
+           <LogoUpper />
             <div className={styles.menu}>
                 <NavigationMenu/>
             </div>

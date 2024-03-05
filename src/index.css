@@ -1,4 +1,12 @@
 @font-face {
     font-family: 'Inter';
-    src: local('Inter-Regular'), url("./styles/fonts/Inter/static/Inter-Regular.ttf") format("ttf");
+    src: local('Inter-SemiBold.ttf'), url("./fonts/Inter/Inter-SemiBold.ttf") format("ttf");
+}
+@font-face {
+    font-family: 'Inter-Regular';
+    src: local('Inter-Regular.ttf'), url("./fonts/Inter/Inter-Regular.ttf") format("ttf");
+}
+@font-face {
+    font-family: 'ferry_black';
+    src: local('ferry_black'), url("./fonts/ferry/Ferry-Black.woff") format("woff");
 }

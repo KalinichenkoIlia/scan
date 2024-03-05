@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export const Group = () => (
-    <svg width="629" height="593" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="none">
+    <svg width="629" height="620" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="none">
         <defs>
             <clipPath id="clip0_0_1">
                 <rect id="svg_1" x="-751" y="-144" fill="white" height="2867" width="1440"/>

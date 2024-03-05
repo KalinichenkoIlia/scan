@@ -1,7 +1,7 @@
 import * as React from "react";
 import style from '../styles/Footer.modules.css'
 
-import "../styles/fonts/Inter/static/Inter-Regular.ttf"
+import "../fonts/Inter/Inter-Regular.ttf"
 
 const Footer = () => {
     return (

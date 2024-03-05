@@ -5,12 +5,13 @@
   justify-content: space-between;
   align-items: center;
 }
-.header .logo {
+.header svg {
+  padding-left: 70px;
   display: grid;
-  left: 60px;
 }
 
 .menu {
+  font-family: Inter, sans-serif;
   display: grid;
   align-items: center;
 }
