@@ -1,16 +1,20 @@
-const path = require("path");
+const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = {
-    entry: path.resolve(process.cwd(), './src/index.tsx'),
+    entry: "./src/index.jsx",
     output: {
-        path: path.resolve(__dirname, "../dist"),
+        path: path.join(__dirname, "../dist"),
         filename: "bundle.js"
     },
+    devServer: {
+        open: true,
+        hot:true,
+        historyApiFallback: true
+    },
     resolve: {
-        extensions: [".js",".jsx", ".json", ".ts", ".tsx"],
+        extensions: [".js",".jsx", ".json"],
     },
     module: {
         rules: [
@@ -23,39 +27,36 @@ module.exports = {
                 ],
             },
             {
-                test: /.([cm]?ts|tsx)$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: {loader: "ts-loader"},
+                use: {
+                    loader: "babel-loader"
+                }
             },
             {
-                test: /\.s?[ac]ss$/,
-                exclude: /node_modules/,
+                test: /\.css$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
                     },
-                    {loader: 'css-loader',
+                    {
+                        loader: 'css-loader',
                         options: {
                             importLoaders: 1,
                             modules: {
                                 localIdentName: '[path][name]__[local]___[hash:base64:5]'
                             }
-                        },
-                    },
-                    {loader: "sass-loader"}
+                        }
+                    }
                 ]
             }
         ]
     },
+
     plugins: [
         new MiniCssExtractPlugin(),
-        new ForkTsCheckerWebpackPlugin(),
-        new ForkTsCheckerNotifierWebpackPlugin({
-            title: 'TypeScript',
-            excludeWarnings: false,
-        }),
         new HtmlWebpackPlugin({
             template: "./src/index.html"
         })
     ]
-};
+}

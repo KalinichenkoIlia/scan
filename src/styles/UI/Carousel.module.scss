@@ -1,8 +1,54 @@
-.carousel_container {
+.window {
+  padding: 30px;
+
   justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+}
+
+.button {
+  border-color: #FFFFFF;
+  background-color: white;
+  width: 39px;
+  height: 39px;
+  position: static;
+
+  img:active {
+    border-radius: 50%;
+    border: 0.1px solid rgba(0, 0, 0, 0.001);
+    box-shadow: 1px 1px 14px 1px rgba(0, 0, 0, 0.001);
+  }
+  img:hover {
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 1px 1px 14px 1px rgba(0, 0, 0, 0.30);
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+}
+
+.carousel_container {
   display: flex;
-  width: 300px;
-  height: 200px;
-  background-color: #5970FF;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 60px;
+  position: relative;
+  max-height: 349px;
+  max-width: 1346px;
+}
+
+.allPagesContainer {
+
+  display: flex;
+}
+
+.section {
+  display: grid;
+  padding-left: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2vw;
 
 }

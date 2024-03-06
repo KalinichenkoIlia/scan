@@ -2,8 +2,8 @@ import * as React from "react";
 
 export const LogoUpper = () => (
 
-     <svg width="111" height="93" viewBox="0 0 111 93" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="-9" width="111" height="111" fill="url(#pattern0)"/>
+     <svg width="150" height="93" viewBox="0 0 111 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect y="-9" width="141" height="141" fill="url(#pattern0)"/>
         <defs>
             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                 <use href="#image0_1_33" transform="scale(0.000520833)"/>
