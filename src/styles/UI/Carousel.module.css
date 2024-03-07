@@ -35,17 +35,17 @@
   max-width: 1346px;
 }
 
-.allPagesContainer {
-  display: flex;
-}
-
-.section {
+.all_pages {
   display: grid;
   padding-left: 30px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
   grid-gap: 2vw;
+  transition: translate;
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
 /*# sourceMappingURL=Carousel.module.css.map */
