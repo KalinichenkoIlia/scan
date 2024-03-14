@@ -1,3 +1,49 @@
+.list_rate {
+  padding-top: 50px;
+  list-style-image: url("../images/card/icons8.png");
+  list-style-position: inside;
+  font-size: 18px;
+}
+.list_rate ul li {
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+}
 
+.tariffs_card {
+  position: relative;
+  padding-left: 30px;
+}
+.tariffs_card .price_list {
+  padding-top: 29px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 30px;
+  width: 190px;
+}
+.tariffs_card .price_list h4 {
+  margin: 0;
+}
+.tariffs_card .price_list del {
+  opacity: 50%;
+}
+.tariffs_card h5 {
+  height: 21px;
+  margin: 10px 0 0 0;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 375px) {
+  .tariffs_card h5 {
+    width: 258px;
+  }
+  .list_rate h2 {
+    font-size: 18px;
+  }
+  .list_rate ul li {
+    font-size: 16px;
+  }
+}
 
 /*# sourceMappingURL=Card.module.css.map */

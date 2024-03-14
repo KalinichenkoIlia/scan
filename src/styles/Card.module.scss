@@ -1,2 +1,61 @@
 @import "./basic/variables.color.scss";
 
+.list_rate {
+  padding-top: 50px;
+  list-style-image: url("../images/card/icons8.png");
+  list-style-position: inside;
+  font-size: 18px;
+  ul {
+    li {
+      font-family: Inter, sans-serif;
+      font-size: 18px;
+    }
+  }
+}
+
+.tariffs_card {
+  position: relative;
+  padding-left: 30px;
+  .price_list {
+    padding-top: 29px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 30px;
+    width: 190px;
+    h4 {
+      margin: 0;
+    }
+    del {
+      opacity: 50%;
+    }
+  }
+  h5 {
+    height: 21px;
+    margin: 10px 0 0 0;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  .tariffs_card{
+    .price_list{
+
+    }
+    h5{
+      width: 258px;
+    }
+  }
+  .list_rate{
+    h2 {
+      font-size: 18px;
+    }
+    ul {
+      li {
+        font-size: 16px;
+      }
+    }
+  }
+}
+

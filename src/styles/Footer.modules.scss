@@ -2,20 +2,25 @@
 
 
 .footer {
-  display: grid;
-  justify-content: end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: $basic-color-turquoise;
   align-items: center;
   width: auto;
   height: 137px;
   list-style: none;
+  img {
+    padding-left: 10px;
+  }
   ul {
+    text-align: right;
     size: 14px;
     padding-right: 20px;
     color: $basic-color-white;
     list-style: none;
-    li {
-      font-family: Inter-Regular, sans-serif;
+    li:nth-child(3){
+      padding-top: 10px;
     }
   }
 }

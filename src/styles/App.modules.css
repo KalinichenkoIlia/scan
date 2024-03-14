@@ -1,11 +1,17 @@
 .app {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+  display: grid;
   justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media (max-width: 360px) {
+  .app {
+    display: grid;
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=App.modules.css.map */
