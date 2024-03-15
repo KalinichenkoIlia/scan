@@ -1,10 +1,11 @@
 import React, {Component} from "react";
-import styles from '../../styles/Authorization.modules.css'
+import styles from '../../styles/Login.modules.css'
 
 import groupPeople from '../../images/authorization/Homo sapiens.svg'
 import lock from '../../images/authorization/lock.svg'
+import LoginForm from "./LoginForm";
 
-class Authorization extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,9 +26,7 @@ class Authorization extends Component {
 
                 <div>
                     <img src={lock} alt='lock'/>
-                    <div>
-
-                    </div>
+                    <LoginForm/>
                 </div>
             </div>
         );
@@ -35,4 +34,4 @@ class Authorization extends Component {
     };
 }
 
-export default Authorization;
+export default Login;

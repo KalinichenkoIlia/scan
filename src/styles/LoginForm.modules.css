@@ -1,0 +1,57 @@
+.login_form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  width: 429px;
+  height: 523px;
+  min-width: 335px;
+  min-height: 504px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1490196078);
+}
+.login_form label {
+  color: #949494;
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+}
+
+.form {
+  display: flex;
+}
+
+.container_input {
+  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 379px;
+  height: 320px;
+}
+
+.input {
+  font-size: 16px;
+  border: 1px solid #C7C7C7;
+  width: 379px;
+  height: 43px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+.button {
+  cursor: pointer;
+  font-size: 22px;
+  font-family: Inter, sans-serif;
+  color: #FFFFFF;
+  background-color: #5970FF;
+  width: 379px;
+  height: 59px;
+  border-radius: 5px;
+  border: none;
+}
+
+.button:disabled {
+  cursor: default;
+  opacity: 50%;
+}
+
+/*# sourceMappingURL=LoginForm.modules.css.map */

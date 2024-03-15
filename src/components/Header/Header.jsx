@@ -25,10 +25,9 @@ function Header() {
                 <div>
                     <a className={styles.reg} href='/'> Зарегистрироваться</a>
                     <span></span>
-                    <a href='/authorization'><button className={styles.auth}>Войти</button></a>
+                    <a href='/login'><button className={styles.auth}>Войти</button></a>
                 </div>
             </ul>
-
             <button type='button' className={`${buttonStyle}`} onClick={handleDropdownClick}>
                 <span></span><span></span><span></span>
             </button>
@@ -41,10 +40,9 @@ function Header() {
                     <li>Тарифы</li>
                     <li>FAQ</li>
                     <li>Зарегистрироваться</li>
-                    <a href='/authorization'>
+                    <a href='/login'>
                         <button>Войти</button>
                     </a>
-
                 </ul>
             </nav>
 

@@ -26,7 +26,6 @@ function Card(props) {
                         <li>{props.text.rate[2]}</li>
                     </ul>
                 </div>
-
             </div>
 
             <button>Подробнее</button>

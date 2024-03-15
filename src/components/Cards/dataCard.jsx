@@ -28,7 +28,7 @@ export const PRO_TEXT = {
     ],
     price_list:{
         price: 2600,
-        discount: 1299, //discount in %
+        discount: 1299, //discount
     },
     installment_text:'или 279 ₽/мес. при рассрочке на 24 мес.',
 }
