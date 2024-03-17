@@ -1,0 +1,45 @@
+.container_nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+}
+.container_nav .auth {
+  cursor: pointer;
+  width: 65px;
+  height: 26px;
+  background-color: #7CE3E1;
+  border-radius: 5px;
+  border: none;
+}
+.container_nav .auth:active {
+  background-color: #60b0af;
+}
+.container_nav .reg {
+  color: black;
+  text-decoration: none;
+  opacity: 50%;
+}
+.container_nav .reg:active {
+  opacity: 1;
+}
+.container_nav .reg:hover {
+  color: #60b0af;
+}
+.container_nav span {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  width: 2px;
+  height: 26px;
+  background-color: #029491;
+}
+
+@media (max-width: 820px) {
+  .container_nav {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=RegisterPanelDesktop.modules.css.map */

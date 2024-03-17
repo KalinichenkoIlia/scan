@@ -1,0 +1,9 @@
+.panel {
+  width: 175px;
+  height: 63px;
+  display: flex;
+  flex-direction: row;
+  border-color: #D9D9D9;
+}
+
+/*# sourceMappingURL=InfoPanel.modules.css.map */

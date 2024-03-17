@@ -1,5 +1,16 @@
+.wrapper {
+  width: 81.4vw;
+  max-width: 1440px;
+}
+
 .main {
   max-width: 1320px;
+}
+
+@media (max-width: 1020px) {
+  .wrapper {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=Main.modules.css.map */

@@ -1,17 +1,15 @@
 import * as React from "react";
 import {Component} from "react";
 import Cards from "../Cards/Cards";
-import Carousel from "../Carousel";
-
+import Carousel from "./Carousel";
 import styles from '../../styles/Home.modules.css'
-
 import HumanBanner from '../../images/home/human.svg'
 import Human from '../../images/home/Group 14.svg'
+import {CustomButton} from "../UI/button/CustomButton";
 
 class Home extends Component {
     constructor(props) {
         super(props);
-
     }
 
     render() {
@@ -27,7 +25,8 @@ class Home extends Component {
                             <h3>Комплексный анализ публикаций, получение данных </h3>
                             <h3>в формате PDF на электронную почту.</h3>
                         </div>
-                        <button>Запросить данные</button>
+                        { localStorage.getItem('accessToken') ? <CustomButton text='Запросить данные'/> : null }
+
                     </div>
                     <img src={HumanBanner} alt='human'/>
                 </div>

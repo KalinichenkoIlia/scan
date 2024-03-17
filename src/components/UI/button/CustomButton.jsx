@@ -1,12 +1,13 @@
-import * as React from "react";
+import styles from '../../../styles/UI/CustomButton.modules.css'
+import {Link} from "react-router-dom";
+
+export const CustomButton = ({type, text, link}) => (
+    <Link to={link}>
+        <button
+            type={type}
+            className={styles.button}
+        >{text}</button>
+    </Link>
 
 
-function CustomButton (props) {
-
-    return(
-        <button>
-
-        </button>
-    );
-}
-export default CustomButton;
+)

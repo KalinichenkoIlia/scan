@@ -1,0 +1,11 @@
+.user_panel {
+  display: flex;
+}
+
+@media (max-width: 820px) {
+  .user_panel {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=UserPanel.modules.css.map */

@@ -2,7 +2,7 @@
 
 .main {
   display: grid;
-  justify-content: center;
+
   align-items: center;
 }
 
@@ -47,17 +47,6 @@
     z-index: -1;
     max-width: 629px;
   }
-
-  button {
-    padding: 0;
-    width: 335px;
-    height: 59px;
-    border-radius: 6px;
-    border: $basic-color-white;
-    font-size: 22px;
-    background-color: $button-banner-color;
-    color: $basic-color-white;
-  }
 }
 
 .human {
@@ -88,7 +77,6 @@
       h1 {
         font-size: 4vw;
       }
-
       div {
         h3 {
           font-size: 1.5vw;
@@ -107,17 +95,10 @@
       h1 {
         font-size: 4vw;
       }
-
       div {
         h3 {
           font-size: 2vw;
         }
-      }
-
-      button {
-        font-size: 2vw;
-        width: 35vw;
-        height: 8vw;
       }
     }
   }
@@ -145,12 +126,6 @@
           font-size: 3vw;
         }
       }
-
-      button {
-        font-size: 3vw;
-        width: 335px;
-        height: 59px;
-      }
     }
   }
   .text_above {
@@ -164,12 +139,6 @@
       h3 {
         font-size: 3vw;
       }
-    }
-
-    button {
-      font-size: 5vw;
-      width: 100%;
-      height: 100%;
     }
   }
 }
@@ -195,12 +164,6 @@
         h3 {
           font-size: 3vw;
         }
-      }
-
-      button {
-        font-size: 3vw;
-        width: 335px;
-        height: 59px;
       }
     }
   }
@@ -229,14 +192,6 @@
           font-size: 4vw;
         }
       }
-
-      button {
-        margin-left: 12px;
-        font-size: 5vw;
-        width: 335px;
-        height: 59px;
-      }
-
     }
   }
   .text_above {

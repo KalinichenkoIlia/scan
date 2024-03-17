@@ -1,0 +1,48 @@
+
+.container_nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px ;
+  .auth {
+    cursor: pointer;
+    width: 65px;
+    height: 26px;
+    background-color: #7CE3E1;
+    border-radius: 5px;
+    border: none;
+  }
+  .auth:active {
+    background-color: #60b0af;
+  }
+  .reg {
+    color: black;
+    text-decoration: none;
+    opacity: 50%;
+  }
+  .reg:active {
+    opacity: 1;
+  }
+  .reg:hover {
+    color: #60b0af;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    width: 2px;
+    height: 26px;
+    background-color: #029491;
+  }
+}
+@media (max-width: 820px) {
+  .container_nav {
+    display: none;
+  }
+}
+
+
+
+

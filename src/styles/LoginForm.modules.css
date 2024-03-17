@@ -1,4 +1,5 @@
 .login_form {
+  font-family: Inter, sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -10,37 +11,60 @@
   border-radius: 10px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1490196078);
 }
-.login_form label {
-  color: #949494;
-  font-size: 16px;
-  font-family: Inter, sans-serif;
+.login_form p {
+  font-size: 14px;
+  text-align: center;
+}
+.login_form img {
+  margin: 0 70px 40px 0;
+  max-width: 308px;
 }
 
-.form {
+.navigation {
+  margin: 20px 0 40px 0;
+  width: 88.5%;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation h4 {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+.navigation div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navigation span {
+  height: 2px;
+}
+.navigation div:nth-child(1) {
+  color: #029491;
+}
+.navigation div:nth-child(1) span {
+  width: 151px;
+  background-color: #029491;
+}
+.navigation div:nth-child(2) {
+  opacity: 50%;
+}
+.navigation div:nth-child(2) span {
+  width: 213px;
+  background-color: black;
 }
 
 .container_input {
-  gap: 3rem;
   display: flex;
   flex-direction: column;
   width: 379px;
   height: 320px;
 }
 
-.input {
-  font-size: 16px;
-  border: 1px solid #C7C7C7;
-  width: 379px;
-  height: 43px;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-}
-
 .button {
   cursor: pointer;
   font-size: 22px;
-  font-family: Inter, sans-serif;
   color: #FFFFFF;
   background-color: #5970FF;
   width: 379px;
@@ -52,6 +76,21 @@
 .button:disabled {
   cursor: default;
   opacity: 50%;
+}
+
+.button:active {
+  opacity: 30%;
+}
+
+.error {
+  position: relative;
+  margin: 0;
+  color: red;
+}
+
+#error_input {
+  border-color: red;
+  box-shadow: 0 0 20px 0 red;
 }
 
 /*# sourceMappingURL=LoginForm.modules.css.map */

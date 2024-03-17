@@ -15,7 +15,7 @@ class Login extends Component {
     render() {
         return(
             <div className={styles.wrapper}>
-                <div>
+                <div className={styles.content}>
                     <div>
                         <h1>Для оформления подписки </h1>
                         <h1>на тариф, необходимо </h1>
@@ -23,7 +23,6 @@ class Login extends Component {
                     </div>
                     <img src={groupPeople} alt='group_people' />
                 </div>
-
                 <div>
                     <img src={lock} alt='lock'/>
                     <LoginForm/>
