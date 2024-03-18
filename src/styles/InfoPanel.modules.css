@@ -1,9 +1,65 @@
 .panel {
-  width: 175px;
-  height: 63px;
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  border-color: #D9D9D9;
+  justify-content: end;
+}
+.panel ul {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  height: 63px;
+  width: 173px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.panel ul .companyLimit h2 {
+  color: black;
+}
+.panel ul .usedCompanyCount h2 {
+  color: #8AC540;
+}
+.panel ul li {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  display: flex;
+  white-space: nowrap;
+}
+.panel ul li h2 {
+  padding-left: 5px;
+  font-size: 20px;
+  margin: 0;
+}
+
+@media only screen and (max-width: 744px) {
+  .panel {
+    position: relative;
+    right: 30px;
+  }
+  .panel ul {
+    margin-top: 16px;
+    width: 132px;
+    height: 75px;
+    align-items: start;
+  }
+  .panel ul li {
+    display: inline-block;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .panel {
+    position: fixed;
+    right: 100px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .panel {
+    position: fixed;
+    right: 100px;
+  }
 }
 
 /*# sourceMappingURL=InfoPanel.modules.css.map */

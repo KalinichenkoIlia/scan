@@ -1,13 +1,14 @@
 import * as React from "react";
-import {useEffect, useState} from "react";
+import {useEffect, useState, useContext} from "react";
 import axios from "axios";
 import {account_info} from "../../data/data";
-import styles from '../../styles/InfoPanel.modules.css'
-import header from "./Header";
+import styles from '../../styles/InfoPanel.modules.css';
+import {AuthContext} from "../context/Contexts";
 
 const accessToken = localStorage.getItem('accessToken');
 
 function InfoPanel() {
+    const {isAuthenticated} = useContext(AuthContext);
     const [info, getInfo] = useState({});
 
     useEffect(() => {
@@ -26,15 +27,13 @@ function InfoPanel() {
             )
             ();
         }
-    }, []);
+    }, [isAuthenticated]);
     return (
         <div className={styles.panel}>
             <ul>
-                <li> Использовано компаний {info.companyLimit}</li>
-                <li> Лимит по компаниям{info.usedCompanyCount}</li>
+                <li className={styles.companyLimit}> Использовано компаний <h2>{info.companyLimit}</h2> </li>
+                <li className={styles.usedCompanyCount}> Лимит по компаниям <h2>{info.usedCompanyCount}</h2>  </li>
             </ul>
-
-
         </div>
     );
 }

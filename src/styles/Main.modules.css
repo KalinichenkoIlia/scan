@@ -1,5 +1,5 @@
 .wrapper {
-  width: 81.4vw;
+  width: 94.4vw;
   max-width: 1440px;
 }
 
@@ -10,6 +10,11 @@
 @media (max-width: 1020px) {
   .wrapper {
     width: 100%;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .main {
+    max-width: 390px;
   }
 }
 

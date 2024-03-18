@@ -3,8 +3,10 @@ import {useContext} from "react";
 import avatar from '../../images/UserPanel/avatar.svg'
 import styles from '../../styles/UserPanel.modules.css'
 import {AuthContext} from "../context/Contexts";
+import {Link} from "react-router-dom";
 
 function UserPanel() {
+
     const {setAuth} = useContext(AuthContext);
     const handleClick = () => {
         localStorage.removeItem('accessToken');
@@ -14,9 +16,9 @@ function UserPanel() {
         <div className={styles.user_panel}>
             <ul>
                 <h3>Алексей А.</h3>
-                <button onClick={handleClick}>Выйти</button>
+                <Link onClick={handleClick}>Выйти</Link>
             </ul>
-            <img src={avatar} alt='avatar'/>
+            <img className={styles.avatar} src={avatar} alt='avatar'/>
         </div>
     )
 }

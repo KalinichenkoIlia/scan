@@ -6,6 +6,7 @@ import {MobileButton} from "../UI/button/MobileButton";
 import {AuthContext} from "../context/Contexts";
 
 
+
 function BurgerMenu() {
     const [isOpen, setOpen] = useState(styles.nav_container_deactivate);
     const [buttonStyle, setButtonStyle] = useState(styles.button_open);
@@ -40,9 +41,14 @@ function BurgerMenu() {
                     <li><a href='/'>Главная</a></li>
                     <li>Тарифы</li>
                     <li>FAQ</li>
-                    <li>Зарегистрироваться</li>
-                    {isAuthenticated ? <MobileButton onClick={logOut} link='/' text='Выйти'/> :
-                        <MobileButton onClick={logIn} link='/login' text='Войти'/>}
+
+                    {isAuthenticated ? <MobileButton onClick={logOut}  text='Выйти'/> :
+                        <>
+                            <li>Зарегистрироваться</li>
+                            <MobileButton onClick={logIn} link='/login' text='Войти'/>
+                        </>
+
+                    }
                 </ul>
             </nav>
         </>

@@ -15,7 +15,7 @@
     width: 415px;
     height: 540px;
     background-color: #FFFFFF;
-    @media only screen and (max-width: 375px){
+    @media only screen and (max-width: 455px){
       width:335px;
       height: 512px;
     }
@@ -54,7 +54,7 @@
           margin: 0;
       }
     }
-      @media only screen and (max-width: 375px){
+      @media only screen and (max-width: 455px){
         ul {
           h3 {
             font-size: 14px;
@@ -80,7 +80,7 @@
       border: none;
       font-size: 20px;
       font-family: Inter, sans-serif;
-      @media only screen and (max-width: 375px){
+      @media only screen and (max-width: 455px){
         width: 286px;
         height: 59px;
         left: 25px;
@@ -110,17 +110,13 @@
 }
 }
 
-@media only screen and (max-width: 375px) {
+
+@media only screen and (max-width: 455px){
   .card_block {
+    grid-template-columns: 335px;
     card {
       width: 335px;
       height: 512px;
     }
-  }
-}
-@media only screen and (max-width: 375px){
-  .card_block {
-    grid-template-columns: 335px;
-
   }
 }

@@ -5,17 +5,14 @@ import InfoPanel from "./InfoPanel";
 import RegisterPanelDesktop from "./RegisterPanelDesktop";
 import UserPanel from "./UserPanel";
 import BurgerMenu from "./BurgerMenu";
-import {useEffect, useContext} from "react";
-
+import {useContext} from "react";
 import {AuthContext} from "../context/Contexts";
 import {Link} from "react-router-dom";
-import {isExpired} from "react-jwt";
 
 
 function Header() {
 
     let {isAuthenticated} = useContext(AuthContext);
-
 
     return (
         <header className={styles.header}>
@@ -28,10 +25,14 @@ function Header() {
                 </ul>
             </nav>
 
-            <>
+            <nav className={styles.left_patel}>
+                {isAuthenticated ? <InfoPanel/> : null}
+
                 {!isAuthenticated ? <RegisterPanelDesktop/> : <UserPanel/>}
-                <BurgerMenu/>
-            </>
+            </nav>
+
+            <BurgerMenu/>
+
 
         </header>
     )
