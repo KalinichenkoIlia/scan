@@ -6,13 +6,12 @@ import styles from '../../styles/Home.modules.css'
 import HumanBanner from '../../images/home/human.svg'
 import Human from '../../images/home/Group 14.svg'
 import {CustomButton} from "../UI/button/CustomButton";
+import {useContext} from "react";
+import {AuthContext} from "../context/Contexts";
 
-class Home extends Component {
-    constructor(props) {
-        super(props);
-    }
 
-    render() {
+function Home () {
+    let {isAuthenticated} = useContext(AuthContext);
         return (
             <div className={styles.main}>
                 <div className={styles.banner}>
@@ -25,7 +24,7 @@ class Home extends Component {
                             <h3>Комплексный анализ публикаций, получение данных </h3>
                             <h3>в формате PDF на электронную почту.</h3>
                         </div>
-                        { localStorage.getItem('accessToken') ? <CustomButton text='Запросить данные'/> : null }
+                        { isAuthenticated ? <CustomButton text='Запросить данные'/> : null }
 
                     </div>
                     <img src={HumanBanner} alt='human'/>
@@ -44,6 +43,6 @@ class Home extends Component {
             </div>
         )
     }
-}
+
 
 export default Home

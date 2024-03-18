@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import {login_url} from "../../data/data";
 import styles from '../../styles/LoginForm.modules.css'
@@ -9,16 +9,14 @@ import {AuthContext} from "../context/Contexts";
 
 
 function LoginForm() {
-    const accessToken = localStorage.getItem('accessToken');
     const [loginInData, setLogin] = useState({nickname: "", password: ''});
     const [messageError, getMessageError] = useState({});
 
-    const {isAuthenticated, setAuth} = useContext(AuthContext)
+    const {isAuthenticated, setAuth} = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (localStorage.getItem('accessToken')) {
-            setAuth(true)
+        if (isAuthenticated) {
             navigate("/");
         }
     }, [])
@@ -26,6 +24,7 @@ function LoginForm() {
     function validateForm() {
         return loginInData.nickname.length > 0 && loginInData.password.length > 0;
     }
+
     async function handleSubmit(event) {
         event.preventDefault();
         try {
@@ -39,12 +38,14 @@ function LoginForm() {
                 localStorage.setItem('accessToken', response.data['accessToken']);
                 setAuth(true);
                 navigate("/");
-                }
-
-            } catch (error) {
-                getMessageError({'error': error.response.data.message})
-                console.error(error)
             }
+
+        } catch (error) {
+            if (error.response.status === 401) {
+                getMessageError({'error': error.response.data.message})
+            }
+            console.error(error)
+        }
     }
 
     return (

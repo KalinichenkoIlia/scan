@@ -16,6 +16,20 @@
 .tariffs_card {
   position: relative;
   padding-left: 30px;
+  p {
+    padding-top: 4px;
+    font-size:14px ;
+    position: absolute;
+    margin-left: 240px;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #3BA5E0;
+    width: 134px;
+    height: 20px;
+
+
+  }
   .price_list {
     padding-top: 29px;
     color: black;
@@ -40,6 +54,9 @@
 
 @media only screen and (max-width: 375px){
   .tariffs_card{
+    p {
+      margin:3px 0 0 160px;
+    }
     .price_list{
 
     }

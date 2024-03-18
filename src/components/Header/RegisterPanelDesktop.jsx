@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 
 
 function RegisterPanelDesktop(){
+
     return(
         <nav className={styles.container_nav}>
             <Link className={styles.reg} to='/'> Зарегистрироваться</Link>

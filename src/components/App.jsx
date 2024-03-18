@@ -1,16 +1,24 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
+import { AuthContext } from "./context/Contexts";
+import { useState, useEffect } from "react";
+import { isExpired } from "react-jwt";
 import Home from "./Home/Home";
 import Main from "./Main/Main";
-import Login from "./Authorization/Login";
+import Authorization from "./Authorization/Authorization";
 import styles from '../styles/App.modules.css'
-import { AuthContext } from "./context/Contexts";
-import { useState} from "react";
-
 
 
 const App = () => {
     const [isAuthenticated, setAuth] = useState(false);
+    // 'isExpired' вернет логическое значение
+    //  true => срок действия вашего токена истек
+    //  false => срок действия вашего токена не истек
+    const expired = !isExpired(localStorage.getItem('accessToken'));
+
+    useEffect(() => {
+        setAuth(expired)
+    }, [])
 
     return (
         <div className={styles.app}>
@@ -18,7 +26,7 @@ const App = () => {
                 <Routes basename='/'>
                     <Route path="/" element={<Main/>}>
                         <Route index element={<Home/>} />
-                        <Route path='/login' element={<Login/>}/>
+                        <Route path='/login' element={<Authorization/>}/>
                     </Route>
                 </Routes>
             </AuthContext.Provider>

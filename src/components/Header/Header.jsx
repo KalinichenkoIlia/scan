@@ -9,17 +9,13 @@ import {useEffect, useContext} from "react";
 
 import {AuthContext} from "../context/Contexts";
 import {Link} from "react-router-dom";
-const accessToken = localStorage.getItem('accessToken');
+import {isExpired} from "react-jwt";
+
 
 function Header() {
 
     let {isAuthenticated} = useContext(AuthContext);
 
-    useEffect(() => {
-
-        console.log(isAuthenticated);
-
-    },[isAuthenticated])
 
     return (
         <header className={styles.header}>
@@ -28,12 +24,12 @@ function Header() {
                 <ul className={styles.ul}>
                     <li><Link to='/'>Главная</Link></li>
                     <li>Тарифы</li>
-                    <li> <Link to='/login'>FAQ</Link></li>
+                    <li><Link to='/login'>FAQ</Link></li>
                 </ul>
             </nav>
 
             <>
-                { !isAuthenticated ?  <RegisterPanelDesktop/> : <UserPanel/>}
+                {!isAuthenticated ? <RegisterPanelDesktop/> : <UserPanel/>}
                 <BurgerMenu/>
             </>
 

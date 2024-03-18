@@ -1,23 +1,33 @@
 import * as React from "react";
 import styles from "../../styles/BurgerMenu.modules.css";
 import logoTwo from "../../images/Logo/logo2.svg";
-import {useState} from "react";
+import {useState, useContext} from "react";
 import {MobileButton} from "../UI/button/MobileButton";
+import {AuthContext} from "../context/Contexts";
 
 
-
-function BurgerMenu(){
+function BurgerMenu() {
     const [isOpen, setOpen] = useState(styles.nav_container_deactivate);
     const [buttonStyle, setButtonStyle] = useState(styles.button_open);
-    const handleClick = () => {
+    const {isAuthenticated, setAuth} = useContext(AuthContext);
+
+    const logOut = () => {
+        setButtonStyle(styles.button_open);
+        setOpen(styles.nav_container_deactivate);
+        setAuth(false);
         localStorage.removeItem('accessToken');
+    }
+    const logIn = () => {
+        setButtonStyle(styles.button_open);
+        setOpen(styles.nav_container_deactivate);
     }
 
     const handleDropdownClick = () => {
         buttonStyle === styles.button ? setButtonStyle(styles.button_open) : setButtonStyle(styles.button);
         isOpen === styles.nav_container_active ? setOpen(styles.nav_container_deactivate) : setOpen(styles.nav_container_active);
     }
-    return(
+
+    return (
         <>
             <button type='button' className={`${buttonStyle}`} onClick={handleDropdownClick}>
                 <span></span><span></span><span></span>
@@ -31,13 +41,12 @@ function BurgerMenu(){
                     <li>Тарифы</li>
                     <li>FAQ</li>
                     <li>Зарегистрироваться</li>
-                    {!localStorage.getItem('accessToken') ?  <MobileButton onClick={null}
-                                                                           link='/' text='Войти'/> :
-                        <MobileButton onClick={handleClick} text='Выйти'/>}
+                    {isAuthenticated ? <MobileButton onClick={logOut} link='/' text='Выйти'/> :
+                        <MobileButton onClick={logIn} link='/login' text='Войти'/>}
                 </ul>
             </nav>
         </>
     )
 }
 
-export default BurgerMenu
+export default BurgerMenu;

@@ -3,8 +3,9 @@ import styles from '../../styles/Card.module.css'
 
 
 function Card(props) {
+    let style = {border: `solid ${props.colorCard}`};
     return (
-        <div className={props.className}>
+        <div style={props.isAuthenticated ? style : null}   className={props.className}>
             <section>
                 <ul>
                     <h1>{props.nameProdukt}</h1>
@@ -13,6 +14,8 @@ function Card(props) {
                 <img src={props.icon} alt='icon'/>
             </section>
             <div className={styles.tariffs_card}>
+                {props.isAuthenticated ? <p>Текущий тариф</p> : null}
+
                 <div className={styles.price_list}>
                     <h4>{props.text.price_list.discount}₽</h4>
                     <del>{props.text.price_list.price} ₽</del>
@@ -27,8 +30,11 @@ function Card(props) {
                     </ul>
                 </div>
             </div>
+            {props.isAuthenticated ?
+                <button style={{backgroundColor:"#D2D2D2", color:"black"}}>Перейти в личный кабинет</button>
+                : <button>Подробнее</button>}
 
-            <button>Подробнее</button>
+
         </div>
     )
 }
