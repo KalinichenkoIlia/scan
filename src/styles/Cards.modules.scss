@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items:center;
   display: grid;
-  grid-gap: 2vw;
+  grid-gap: 1vw;
   grid-template-columns: repeat(auto-fit, minmax(415px, 1fr));
   padding-bottom: 100px;
 
@@ -113,6 +113,8 @@
 
 @media only screen and (max-width: 455px){
   .card_block {
+    grid-gap: 3vw;
+    justify-content: center;
     grid-template-columns: 335px;
     card {
       width: 335px;

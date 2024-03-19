@@ -1,5 +1,4 @@
 import * as React from "react";
-import {Component} from "react";
 import Cards from "../Cards/Cards";
 import Carousel from "./Carousel";
 import styles from '../../styles/Home.modules.css'
@@ -24,7 +23,7 @@ function Home () {
                             <h3>Комплексный анализ публикаций, получение данных </h3>
                             <h3>в формате PDF на электронную почту.</h3>
                         </div>
-                        { isAuthenticated ? <CustomButton text='Запросить данные'/> : null }
+                        { isAuthenticated ? <CustomButton link='/search' text='Запросить данные'/> : null }
 
                     </div>
                     <img src={HumanBanner} alt='human'/>

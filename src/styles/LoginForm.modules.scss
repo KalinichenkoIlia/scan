@@ -1,6 +1,7 @@
 @import "./basic/variables.color";
 
 .login_form {
+  position: relative;
   font-family: Inter, sans-serif;
   display: flex;
   align-items: center;
@@ -66,9 +67,8 @@
 }
 
 .container_input {
-
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  justify-content: end;
   width: 379px;
   height: 320px;
 }
@@ -98,7 +98,42 @@
   margin: 0;
   color: red;
 }
-#error_input {
-  border-color: red;
-  box-shadow: 0 0 20px 0 red;
+
+
+@media only screen and (max-width: 455px) {
+  .login_form {
+    width: 335px;
+    height: 504px;
+    img {
+      margin-right: 0;
+    }
+  }
+  .navigation {
+    width: 335px ;
+    justify-content: center;
+    h4 {
+      font-size: 14px;
+    }
+    div:nth-child(1) {
+     margin-right: 20px;
+      span {
+        width: 103px;
+      }
+    }
+
+    div:nth-child(2) {
+      opacity: 50%;
+
+      span {
+        width: 182px;
+      }
+    }
+  }
+  .container_input {
+    width: 305px;
+
+  }
+  .button {
+    width: 305px;
+  }
 }

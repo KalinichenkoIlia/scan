@@ -4,6 +4,7 @@ import logoTwo from "../../images/Logo/logo2.svg";
 import {useState, useContext} from "react";
 import {MobileButton} from "../UI/button/MobileButton";
 import {AuthContext} from "../context/Contexts";
+import {Link} from "react-router-dom";
 
 
 
@@ -18,7 +19,7 @@ function BurgerMenu() {
         setAuth(false);
         localStorage.removeItem('accessToken');
     }
-    const logIn = () => {
+    const logIn = () => {   // закрывает бургер меню
         setButtonStyle(styles.button_open);
         setOpen(styles.nav_container_deactivate);
     }
@@ -38,7 +39,7 @@ function BurgerMenu() {
                 <nav className={styles.nav_active}>
                 </nav>
                 <ul className={styles.menu_list}>
-                    <li><a href='/'>Главная</a></li>
+                    <li onClick={logIn}><Link to='/'>Главная</Link></li>
                     <li>Тарифы</li>
                     <li>FAQ</li>
 

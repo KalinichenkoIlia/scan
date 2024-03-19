@@ -5,7 +5,7 @@ import icon_bulb from "../../images/card/light_bulb.svg";
 import {ColorCard, BEGINNER_TEXT, BUSINESS_TEXT, PRO_TEXT} from "./dataCard";
 import icon_target from "../../images/card/target.svg";
 import icon_laptop from "../../images/card/laptop.svg";
-import styles from '../../styles/Cards.css'
+import styles from '../../styles/Cards.modules.css'
 import { useContext } from "react";
 import { AuthContext } from "../context/Contexts";
 

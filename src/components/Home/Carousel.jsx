@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from '../../styles/Carousel.module.css'
+import styles from '../../styles/Carousel.modules.css'
 
 import iconMagnifier from '../../images/carousel/Mask group.svg'
 import iconWatch from '../../images/carousel/Mask group (2).svg'

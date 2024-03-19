@@ -6,7 +6,7 @@
 
 }
 
-.input{
+.input {
   margin-top: 10px;
   font-size: 16px;
   border: 1px solid #C7C7C7;
@@ -14,4 +14,22 @@
   height: 43px;
   border-radius: 5px;
   background-color: #FFFFFF;
+}
+
+
+@media only screen and (max-width: 455px) {
+  .label {
+    display: block;
+    width: 299px;
+    height: 82px;
+    font-size: 14px;
+    .input {
+      height: 39px;
+      width: 299px;
+    }
+  }
+}
+.error_input {
+  border-color: red;
+  box-shadow: 0 0 20px 0 red;
 }

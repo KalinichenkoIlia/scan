@@ -10,7 +10,7 @@ import {AuthContext} from "../context/Contexts";
 
 function LoginForm() {
     const [loginInData, setLogin] = useState({nickname: "", password: ''});
-    const [messageError, getMessageError] = useState({});
+    const [messageError, getMessageError] = useState([]);
 
     const {isAuthenticated, setAuth} = useContext(AuthContext);
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ function LoginForm() {
     }, [])
 
     function validateForm() {
-        return loginInData.nickname.length > 0 && loginInData.password.length > 0;
+        return loginInData.nickname.length > 2 && loginInData.password.length > 2;
     }
 
     async function handleSubmit(event) {
@@ -35,14 +35,15 @@ function LoginForm() {
                     'password': `${loginInData.password}`
                 });
             if (response.status === 200) {
+                navigate("/");
                 localStorage.setItem('accessToken', response.data['accessToken']);
                 setAuth(true);
-                navigate("/");
+
             }
 
         } catch (error) {
             if (error.response.status === 401) {
-                getMessageError({'error': error.response.data.message})
+                getMessageError(error.response.data.message)
             }
             console.error(error)
         }
@@ -62,6 +63,7 @@ function LoginForm() {
             </nav>
             <div className={styles.container_input}>
                 <InputField
+                    style={{boxShadow: messageError.length === 0 ? "#ccc" : "0 0 5px 0 red"}}
                     name='name'
                     label='Логин или номер телефона:'
                     type='text'
@@ -69,13 +71,14 @@ function LoginForm() {
                     onChange={e => setLogin({...loginInData, nickname: e.target.value})}
                 />
                 <InputField
+                    style={{boxShadow: messageError.length === 0 ? "#ccc" : "0 0 5px 0 red"}}
                     name='password'
                     label='Пароль:'
                     type='password'
                     value={loginInData.password.value}
                     onChange={e => setLogin({...loginInData, password: e.target.value})}
                 />
-                <p className={styles.error}>{messageError.error}</p>
+                <p className={styles.error}>{messageError}</p>
                 <button onClick={handleSubmit} className={styles.button} type='submit'
                         disabled={!validateForm()}>Войти
                 </button>

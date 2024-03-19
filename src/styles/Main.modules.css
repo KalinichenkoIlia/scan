@@ -1,9 +1,16 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 94.4vw;
   max-width: 1440px;
 }
 
 .main {
+  display: grid;
+  justify-content: center;
+  width: 100vw;
   max-width: 1320px;
 }
 
@@ -15,6 +22,12 @@
 @media only screen and (max-width: 390px) {
   .main {
     max-width: 390px;
+  }
+}
+@media only screen and (max-width: 1020px) {
+  .main {
+    display: block;
+    width: 100%;
   }
 }
 

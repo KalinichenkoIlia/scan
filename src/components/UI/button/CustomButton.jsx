@@ -8,6 +8,4 @@ export const CustomButton = ({type, text, link}) => (
             className={styles.button}
         >{text}</button>
     </Link>
-
-
 )

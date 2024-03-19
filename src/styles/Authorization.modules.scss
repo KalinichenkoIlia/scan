@@ -1,33 +1,114 @@
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1.5fr));
-  justify-content: space-between;
-  align-items: center;
+  width: 87vw;
   max-width: 1320px;
   margin-bottom: 50px;
+}
 
-  div:nth-child(2){
-    display: grid;
-    justify-content: end;
-    img:nth-child(1) {
+.group_people {
+  position: relative;
+  max-width: 150vw;
+  bottom: 370px;
+  left: 14vw;
+}
+
+.content {
+  max-height: 578px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: space-between;
+
+  .text {
+    margin: 50px 0 0 0;
+    position: relative;
+
+    h3 {
       position: relative;
-      z-index: 1;
-      top: 30px;
-      right: 50px;
+      left: 10px;
+      white-space: nowrap;
+      margin: 0;
+      font-size: 2.4vw;
+      font-family: Ferry, sans-serif;
     }
   }
-}
-.content{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
-  h1 {
-    position: relative;
-    left: 10px;
-    white-space: nowrap;
-    margin: 0;
-    font-size: 2vw;
-    font-family: Ferry, sans-serif;
+
+  .wrapper_login_form {
+    display: grid;
+    justify-content: end;
   }
+}
+
+.lock {
+  width: 8vw;
+  max-width: 76px;
+  min-width: 50px;
+  position: relative;
+  top: 30px;
+  right: 50px;
+}
+
+@media only screen and (max-width: 1130px) {
+  .wrapper {
+    display: grid;
+    justify-content: center;
+    height: 1200px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .text {
+      h3 {
+        font-size: 4vw;
+      }
+    }
+
+    .wrapper_login_form {
+      justify-content: center;
+    }
+  }
+  .group_people {
+    top: 80px;
+    left: 0;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    .text {
+      h3 {
+        font-size: 5vw;
+      }
+    }
+
+    .wrapper_login_form {
+      margin-top: 20px;
+    }
+  }
+  .lock {
+    width: 100%;
+    right: 0;
+    top: 0;
+    left: 140px;
+  }
+}
+
+@media only screen and (max-width: 455px) {
+  .wrapper {
+    width: 100%;
+  }
+  .group_people {
+    left: 0;;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .content {
+    .text {
+      h3 {
+        font-size: 5vw;
+      }
+    }
+  }
+
 }

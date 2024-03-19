@@ -1,4 +1,5 @@
 .login_form {
+  position: relative;
   font-family: Inter, sans-serif;
   display: flex;
   align-items: center;
@@ -56,8 +57,8 @@
 }
 
 .container_input {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  justify-content: end;
   width: 379px;
   height: 320px;
 }
@@ -88,9 +89,39 @@
   color: red;
 }
 
-#error_input {
-  border-color: red;
-  box-shadow: 0 0 20px 0 red;
+@media only screen and (max-width: 455px) {
+  .login_form {
+    width: 335px;
+    height: 504px;
+  }
+  .login_form img {
+    margin-right: 0;
+  }
+  .navigation {
+    width: 335px;
+    justify-content: center;
+  }
+  .navigation h4 {
+    font-size: 14px;
+  }
+  .navigation div:nth-child(1) {
+    margin-right: 20px;
+  }
+  .navigation div:nth-child(1) span {
+    width: 103px;
+  }
+  .navigation div:nth-child(2) {
+    opacity: 50%;
+  }
+  .navigation div:nth-child(2) span {
+    width: 182px;
+  }
+  .container_input {
+    width: 305px;
+  }
+  .button {
+    width: 305px;
+  }
 }
 
 /*# sourceMappingURL=LoginForm.modules.css.map */

@@ -6,6 +6,7 @@ import { isExpired } from "react-jwt";
 import Home from "./Home/Home";
 import Main from "./Main/Main";
 import Authorization from "./Authorization/Authorization";
+import Search from "./Search/Search";
 import styles from '../styles/App.modules.css'
 
 
@@ -25,8 +26,9 @@ const App = () => {
             <AuthContext.Provider value={{isAuthenticated,setAuth }}>
                 <Routes basename='/'>
                     <Route path="/" element={<Main/>}>
-                        <Route index element={<Home/>} />
+                        <Route index element={<Search/>} />
                         <Route path='/login' element={<Authorization/>}/>
+                        <Route path='/search' element={<Search/>} />
                     </Route>
                 </Routes>
             </AuthContext.Provider>

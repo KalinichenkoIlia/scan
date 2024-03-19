@@ -1,35 +1,96 @@
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1.5fr));
-  justify-content: space-between;
-  align-items: center;
+  width: 87vw;
   max-width: 1320px;
   margin-bottom: 50px;
 }
-.wrapper div:nth-child(2) {
-  display: grid;
-  justify-content: end;
-}
-.wrapper div:nth-child(2) img:nth-child(1) {
+
+.group_people {
   position: relative;
-  z-index: 1;
-  top: 30px;
-  right: 50px;
+  max-width: 150vw;
+  bottom: 370px;
+  left: 14vw;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
+  max-height: 578px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: space-between;
 }
-.content h1 {
+.content .text {
+  margin: 50px 0 0 0;
+  position: relative;
+}
+.content .text h3 {
   position: relative;
   left: 10px;
   white-space: nowrap;
   margin: 0;
-  font-size: 2vw;
+  font-size: 2.4vw;
   font-family: Ferry, sans-serif;
+}
+.content .wrapper_login_form {
+  display: grid;
+  justify-content: end;
+}
+
+.lock {
+  width: 8vw;
+  max-width: 76px;
+  min-width: 50px;
+  position: relative;
+  top: 30px;
+  right: 50px;
+}
+
+@media only screen and (max-width: 1130px) {
+  .wrapper {
+    display: grid;
+    justify-content: center;
+    height: 1200px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .content .text h3 {
+    font-size: 4vw;
+  }
+  .content .wrapper_login_form {
+    justify-content: center;
+  }
+  .group_people {
+    top: 80px;
+    left: 0;
+    position: relative;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .content .text h3 {
+    font-size: 5vw;
+  }
+  .content .wrapper_login_form {
+    margin-top: 20px;
+  }
+  .lock {
+    width: 100%;
+    right: 0;
+    top: 0;
+    left: 140px;
+  }
+}
+@media only screen and (max-width: 455px) {
+  .wrapper {
+    width: 100%;
+  }
+  .group_people {
+    left: 0;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .content .text h3 {
+    font-size: 5vw;
+  }
 }
 
 /*# sourceMappingURL=Authorization.modules.css.map */

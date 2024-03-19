@@ -16,17 +16,17 @@ class Authorization extends Component {
         return(
             <div className={styles.wrapper}>
                 <div className={styles.content}>
-                    <div>
-                        <h1>Для оформления подписки </h1>
-                        <h1>на тариф, необходимо </h1>
-                        <h1>авторизоваться.</h1>
+                    <div className={styles.text}>
+                        <h3>Для оформления подписки </h3>
+                        <h3>на тариф, необходимо </h3>
+                        <h3>авторизоваться.</h3>
                     </div>
-                    <img src={groupPeople} alt='group_people' />
+                    <div className={styles.wrapper_login_form}>
+                        <img className={styles.lock} src={lock} alt='lock'/>
+                        <LoginForm/>
+                    </div>
                 </div>
-                <div>
-                    <img src={lock} alt='lock'/>
-                    <LoginForm/>
-                </div>
+                <img className={styles.group_people} src={groupPeople} alt='group_people' />
             </div>
         );
 
