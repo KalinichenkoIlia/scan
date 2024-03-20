@@ -11,9 +11,9 @@ import FormRequestParameters from "./FormRequestParameters";
 function Search() {
     const {isAuthenticated, setAuth} = useContext(AuthContext);
     const navigate = useNavigate();
-    useEffect(() => {
-        !isAuthenticated ? navigate('/') : null;
-    })
+    //useEffect(() => {
+       // !isAuthenticated ? navigate('/') : null;
+   // })
 
 
     return(

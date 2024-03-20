@@ -38,7 +38,6 @@ function LoginForm() {
                 navigate("/");
                 localStorage.setItem('accessToken', response.data['accessToken']);
                 setAuth(true);
-
             }
 
         } catch (error) {

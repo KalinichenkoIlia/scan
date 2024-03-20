@@ -1,9 +1,96 @@
+
 .form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   width: 872px;
   height: 543px;
   border-radius: 10px;
   box-shadow: 0 0 20px 0 #00000033;
 
+}
+
+.section_input {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 50px;
+  height: 426px;
+}
+
+.tonality {
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+
+  select {
+    padding-left: 30px;
+    margin-top: 20px;
+    width: 245px;
+    height: 47px;
+    display: flex;
+    border: 1px #C7C7C7 solid;
+    border-radius: 5px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+  }
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items:start;
+  justify-content: start;
+  width: 372px;
+  height: 94px;
+  p {
+    font-size: 18px;
+    font-family: Inter,sans-serif;
+  }
+  div {
+    div {
+      div {
+        input {
+          font-size: 14px;
+          font-family: Inter,sans-serif;
+          border: 1px #C7C7C7 solid;
+          border-radius: 5px;
+          width: 168px;
+          height: 43px;
+        }
+      }
+
+    }
+  }
+
+}.date > div{
+  width: 100%;
+  justify-content: space-between;
+   display: flex;
+ }
+.section_checkbox {
+  margin-top: 40px;
+  width: 406px;
+  height: 243px;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    padding-bottom: 15px;
+
+    input[type=checkbox] {
+      transform: scale(1.5);
+    }
+
+    input:checked + span {
+      opacity: 1;
+    }
+
+    span {
+      padding-left: 10px;
+      font-size: 18px;
+      font-family: Inter, sans-serif;
+      opacity: 50%;
+    }
+  }
 }
