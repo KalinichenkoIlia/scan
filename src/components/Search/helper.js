@@ -1,5 +1,5 @@
 import * as Yup from  'yup'
-import {mixed, number} from "yup";
+import {mixed, number, ref} from "yup";
 
 
 const inn = Yup.string()
@@ -14,16 +14,22 @@ const countDocuments = Yup.number()
     .min(1, 'Введите значение от 1 до 1000')
     .max(1000, 'Введите значение от 1 до 1000')
 
+const select = Yup.string()
 
 
 export const schemas = {
     custom: Yup.object().shape({
         inn,
         countDocuments,
+        select,
     })
 }
 export const initialValues = {
     inn : '',
     countDocuments: '',
+    select: 'any',
+
+
+
 
 }

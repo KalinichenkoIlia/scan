@@ -1,134 +1,101 @@
-import React, {useContext, useEffect, useState} from "react";
-
-import {useNavigate} from "react-router-dom";
-import axios from "axios";
+import React, { useState } from "react";
 import styles from '../../styles/FormRequestParameters.modules.css';
-import {AuthContext} from "../context/Contexts";
-import {Input} from "../UI/input/Input";
-import formik, {Formik, Form, useFormik, useField, useFormikContext} from "formik";
+import { Formik, Form, Field } from "formik";
 import {initialValues, schemas} from "./helper";
 import DatePicker from "react-datepicker";
-import {CustomButton} from "../UI/button/CustomButton";
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-import {Field, ErrorMessage as Error} from "formik";
-import {login_url} from "../../data/data";
-import {submit} from "./submit";
+import Checkbox from "./Checkbox";
+import {Input} from "../UI/input/Input";
 
 
-function FormRequestParameters() {
-    const [startDate, setStartDate] = useState(new Date("01/02/2019"));
-    const [endDate, setEndDate] = useState(new Date().toJSON().slice(0, 10).replace(/-/g, '/'));
+function FormRequestParameters(props) {
+
+    const [startDate, setStartDate] = useState(new Date('10.09.2021').toJSON());
+    const [endDate, setEndDate] = useState(new Date().toJSON());
+
+    function handleOnChange(values, startDate, endDate) {
+        props.setValue({ startDate: startDate, endDate: endDate, values:values});
+    }
 
     return (
-        <Formik initialValues={initialValues}
-                validationSchema={schemas.custom}
-                onSubmit={(values) => {
-                    console.log(values)
-                }}
-        >
-            <Form className={styles.form}>
-                <section className={styles.section_input}>
-                    <Input
-                        id='inn'
-                        name='inn'
-                        label='ИНН компании*'
-                        placeholder='10 цифр'
-                    />
-                    <label className={styles.tonality}>
-                        Тональность
-                        <select >
-                            <option value=''>Любая</option>
-                            <option value=''>Позитивная</option>
-                            <option value=''>Негативная</option>
-                        </select>
-                    </label>
-                    <Input
-                        id='countDocuments'
-                        name='countDocuments'
-                        label='Количество документов в выдаче*'
-                        placeholder='От 1 до 1000'
-                    />
-                    <div className={styles.date}>
-                        <p>Диапазон поиска*</p>
+        <Formik
+            initialValues={initialValues}
+            validationSchema={schemas.custom}
+            onSubmit={(values) => handleOnChange(values, startDate, endDate)}>
+            {({dirty, isValid}) => (
+                <Form className={styles.form}>
+                    <section  className={styles.section_input}>
+                        <Input t
+                            id='inn'
+                            name='inn'
+                            label='ИНН компании*'
+                            placeholder='10 цифр'
+                        />
+                        <label className={styles.tonality}>
+                            Тональность
+                            <Field as="select" htmlFor='select' name='select' id='select'>
+                                <option value='any'>Любая</option>
+                                <option value='positive'>Позитивная</option>
+                                <option value='negative'>Негативная</option>
+                            </Field>
+                        </label>
+
+                        <Input
+                            id='countDocuments'
+                            name='countDocuments'
+                            label='Количество документов в выдаче*'
+                            placeholder='От 1 до 1000'
+                        />
+                        <div className={styles.date}>
+                            <p>Диапазон поиска*</p>
+                            <div>
+                                <div>
+                                    <DatePicker
+                                        selected={startDate}
+                                        onChange={(date) => setStartDate(new Date(date).toJSON())}
+                                        dateFormat='dd.MM.yyyy'
+                                        name='startDate'
+                                        id='startDate'
+                                        selectsStart
+                                        startDate={startDate}
+                                        endDate={endDate}
+                                        errorText="This is an error message."
+                                        maxDate={Date().toString()}
+                                        required
+
+                                    />
+                                </div>
+                                <div>
+                                    <DatePicker
+                                        selected={endDate}
+                                        onChange={(date) => setEndDate(new Date(date).toJSON())}
+                                        dateFormat='dd.MM.yyyy'
+                                        name='endDate'
+                                        id='endDate'
+                                        selectsEnd
+                                        startDate={startDate}
+                                        endDate={endDate}
+                                        minDate={startDate}
+                                        maxDate={new Date().toJSON()}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div className={styles.wrapper_checkbox}>
+                        <Checkbox/>
                         <div>
-                            <div>
-                                <DatePicker
-
-                                    selected={startDate}
-                                    onChange={(date) => setStartDate(date)}
-                                    dateFormat='dd/MM/yyyy'
-                                    name='startDate'
-                                    id='startDate'
-                                    selectsStart
-                                    startDate={startDate}
-                                    endDate={endDate}
-                                    errorText="This is an error message."
-                                    maxDate={endDate}
-                                    required
-
-                                />
-                            </div>
-                            <div>
-                                <DatePicker
-
-                                    selected={endDate}
-                                    onChange={(date) => setEndDate(date)}
-                                    dateFormat='dd/MM/yyyy'
-                                    name='endDate'
-                                    id='endDate'
-                                    selectsEnd
-                                    startDate={startDate}
-                                    endDate={endDate}
-                                    minDate={startDate}
-                                    maxDate={Date().toString()}
-                                    required
-
-                                />
-                            </div>
+                            <button onClick={props.openSearch} disabled={!(dirty && isValid)} className={styles.button} type='submit'>Поиск
+                            </button>
+                            <p>* Обязательные к заполнению поля</p>
                         </div>
 
                     </div>
-                </section>
-                <section className={styles.section_checkbox}>
-                    <label>
-                        <input type="checkbox"/>
-                        <span>Признак максимальной полноты</span>
 
-                    </label>
-                    <label>
-                        <input type="checkbox"/>
+                </Form>
+            )}
 
-                        <span>Упоминания в бизнес-контексте</span>
-                    </label>
-                    <label>
-                        <input type="checkbox"/>
-
-                        <span>Главная роль в публикации</span>
-                    </label>
-                    <label>
-                        <input type="checkbox"/>
-
-                        <span>Публикации только с риск-факторами</span>
-                    </label>
-                    <label>
-                        <input type="checkbox"/>
-
-                        <span>Включать технические новости рынков</span>
-                    </label>
-                    <label>
-                        <input type="checkbox"/>
-
-                        <span>Включать анонсы и календари</span>
-                    </label>
-                    <label>
-                        <input type="checkbox"/>
-
-                        <span>Включать сводки новостей</span>
-                    </label>
-
-                    <button type='submit'>Поиск</button>
-                </section>
-            </Form>
         </Formik>
 
     );

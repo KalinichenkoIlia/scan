@@ -1,0 +1,35 @@
+.section_checkbox {
+  margin-top: 40px;
+  width: 406px;
+  height: 243px;
+  display: flex;
+  flex-direction: column;
+  label {
+    padding-bottom: 15px;
+
+    input[type=checkbox] {
+      transform: scale(1.5);
+    }
+
+    input:checked + span {
+      opacity: 1;
+    }
+
+    span {
+      max-font-size: 18px;
+      padding-left: 10px;
+      font-size: 1.3vw;
+      font-family: Inter, sans-serif;
+      opacity: 50%;
+    }
+  }
+}
+@media only screen and (max-width: 820px){
+  .section_checkbox {
+    label {
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -152,6 +152,9 @@
   .nav_container_active .menu_list button:hover {
     background: #30e8e7;
   }
+  .nav_container_active .menu_list {
+    left: 265px;
+  }
   .nav_container_deactivate {
     display: block;
   }
@@ -170,6 +173,7 @@
     transform: translateX(0%);
   }
   .nav_container_deactivate .menu_list {
+    left: 265px;
     opacity: 0;
   }
   .logo {

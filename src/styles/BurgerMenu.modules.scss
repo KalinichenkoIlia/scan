@@ -158,8 +158,13 @@
   .nav_container_active {
     display: block;
 
-    @include nav_container(true)
+    @include nav_container(true);
+    .menu_list {
+      left: 265px;
+
+    }
   }
+
   .nav_container_deactivate {
     @include nav_container(false);
     display: block;
@@ -178,6 +183,7 @@
       transform: translateX(0%);
     }
     .menu_list {
+      left: 265px;
       opacity: 0;
     }
   }
