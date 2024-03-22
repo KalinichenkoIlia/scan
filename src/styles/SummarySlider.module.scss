@@ -1,0 +1,92 @@
+@import "./basic/variables.color";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+#slider_container {
+  max-width: 1260px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  width: 82vw;
+  max-height: 158px;
+  border-radius: 10px;
+  border: $basic-color-turquoise solid 2px;
+  margin-bottom: 90px;
+}
+.box {
+  display: flex ;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  width: 140px;
+  height: 158px;
+  span {
+    display: block;
+    background-color: #949494;
+    height: 124px;
+    width: 2px;
+  }
+}
+.list_column {
+  display:flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+}
+
+.left_part {
+  max-width: 133px;
+  max-height: 158px;
+  background-color: $basic-color-turquoise;
+  ul {
+    list-style: none;
+  }
+}
+
+#slider_container {
+  div:nth-child(2){
+    position: relative;
+    right: 30px;
+    width: 82vw;
+    height: 158px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 1300px;
+    div {
+      max-height: 158px;
+      background-color: #FFFFFF;
+      overflow: hidden;
+      display: inline-block;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      div {
+        max-height: 158px;
+
+      }
+    }
+    button:nth-child(1) {
+      background-color: black;
+      position: relative;
+      z-index: 5;
+      right: 162px;
+    }
+    button:nth-child(2) {
+      background-color: black;
+      color: black;
+      position: relative;
+      z-index: 5;
+    }
+  }
+}
+

@@ -6,7 +6,8 @@ import FormRequestParameters from "./FormRequestParameters";
 import styles from '../../styles/Search.modules.css';
 import human from '../../images/search/human.svg';
 import folders from '../../images/search/Folders.svg';
-import document from '../../images/search/Document.svg'
+import document from '../../images/search/Document.svg';
+import OutputSearchResults from './OutputSearchResults'
 
 
 
@@ -54,7 +55,7 @@ function Search(){
                     &times;
                 </button>
                 <div className={styles.overlay_content}>
-
+                    <OutputSearchResults/>
                 </div>
 
             </div>

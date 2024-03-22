@@ -1,0 +1,24 @@
+.search_results {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1346px;
+}
+
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner_content h2 {
+  font-family: Ferry, sans-serif;
+  font-size: 40px;
+}
+.banner_content p {
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=OutputSearchResults.modules.css.map */

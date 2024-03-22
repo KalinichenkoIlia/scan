@@ -11,7 +11,7 @@
   height: 137px;
   list-style: none;
   img {
-    padding-left: 10px;
+    padding-left: 60px;
   }
   ul {
     text-align: right;
@@ -21,6 +21,15 @@
     list-style: none;
     li:nth-child(3){
       padding-top: 10px;
+    }
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .footer {
+    img {
+      padding-left: 20px;
     }
   }
 }

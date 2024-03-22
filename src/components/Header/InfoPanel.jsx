@@ -1,9 +1,9 @@
 import * as React from "react";
-
 import axios from "axios";
 import {account_info} from "../../data/data";
 import styles from '../../styles/InfoPanel.modules.css';
 import {AuthContext} from "../context/Contexts";
+import {Loader} from "../UI/Loader";
 
 
 class InfoPanel extends React.Component {
@@ -44,7 +44,7 @@ class InfoPanel extends React.Component {
         return (
             <div className={styles.panel}>
                 <ul>
-                    {!this.state.isLoaded ? <span className={styles.loader}></span> :
+                    {!this.state.isLoaded ? <Loader/> :
                         <>
                             <li className={styles.companyLimit}> Использовано
                                 компаний <h2>{this.state.info['companyLimit']}</h2></li>
@@ -52,7 +52,6 @@ class InfoPanel extends React.Component {
                                 компаниям <h2>{this.state.info['usedCompanyCount']}</h2></li>
                         </>
                     }
-
 
                 </ul>
             </div>

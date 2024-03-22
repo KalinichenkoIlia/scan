@@ -1,4 +1,6 @@
 .header {
+  margin: auto;
+  max-width: 1440px;
   background-color: #FFFFFF;
   position: fixed;
   justify-content: space-between;

@@ -8,6 +8,7 @@ import Main from "./Main/Main";
 import Authorization from "./Authorization/Authorization";
 import Search from "./Search/Search";
 import styles from '../styles/App.modules.css'
+import OutputSearchResults from "./Search/OutputSearchResults";
 
 
 const App = () => {
@@ -26,7 +27,7 @@ const App = () => {
             <AuthContext.Provider value={{isAuthenticated,setAuth }}>
                 <Routes basename='/'>
                     <Route path="/" element={<Main/>}>
-                        <Route index element={<Search/>} />
+                        <Route index element={<OutputSearchResults/>} />
                         <Route path='/login' element={<Authorization/>}/>
                         <Route path='/search' element={<Search/>} />
                     </Route>
