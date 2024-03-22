@@ -192,7 +192,7 @@
   }
   .button_open{
     position: relative;
-    z-index: 3;
+    z-index: 5;
     padding-right: 50px;
     display: block;
   }
@@ -204,7 +204,7 @@
 @media only screen and (max-width: 768px) {
   .nav_container_active {
     .menu_list {
-      left: 200px;
+      left: 242px;
     }
   }
 }
@@ -212,7 +212,7 @@
 @media only screen and (max-width: 744px) {
 
   .logo{
-    padding-left: 0px;
+    padding-left: 0;
   }
   .nav_container_active {
     .menu_list{

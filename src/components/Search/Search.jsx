@@ -14,7 +14,6 @@ function Search(){
     const {isAuthenticated, setAuth} = useContext(AuthContext);
     const navigate = useNavigate();
     const [value, setValue] = useState({startDate:"", endDate: '', values: {}});
-
     const overlayRef = useRef();
 
     const openSearch = () => {
@@ -37,24 +36,19 @@ function Search(){
                     <h2 className={styles.h2}>данные в пару кликов.</h2>
                     <h4 className={styles.h4}>Задайте параметры поиска.<br/>
                    Чем больше заполните, тем точнее поиск</h4>
-
                     <FormRequestParameters openSearch={openSearch} setValue={setValue}/>
-
                     <button onClick={openSearch} className={styles.open_button}>
                     </button>
                 </div>
                 <img className={styles.img_document} src={document} alt='document'/>
                 <div className={styles.images_container}>
-
-                    <dib>
+                    <div>
                         <img className={styles.img_folders} src={folders} alt='folders'/>
-                    </dib>
+                    </div>
 
                     <img className={styles.img_human} src={human} alt='human'/>
                 </div>
             </div>
-
-
             <div ref={overlayRef} className={styles.overlay}>
                 <button className={styles.close_button} onClick={closeSearch}>
                     &times;

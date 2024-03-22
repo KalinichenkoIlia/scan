@@ -117,10 +117,17 @@
     margin-left: 65px;
   }
 }
+@media only screen and (max-width: 430px) {
+  .panel {
+    right: 0;
+  }
+
+}
+
 @media only screen and (max-width: 414px) {
   .panel {
     position: fixed;
-    right: 100px;
+    right: 120px;
   }
 }
 
