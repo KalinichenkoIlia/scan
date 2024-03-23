@@ -2,5 +2,19 @@
   display: flex;
   flex-direction: column;
 }
+.summary h2 {
+  font-family: Ferry, sans-serif;
+  font-size: 30px;
+}
+.summary p {
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+}
+
+@media only screen and (max-width: 1024px) {
+  .summary {
+    align-items: start;
+  }
+}
 
 /*# sourceMappingURL=GeneralSummary.modules.css.map */

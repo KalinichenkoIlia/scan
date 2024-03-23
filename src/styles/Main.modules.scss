@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:94.4vw;
+  width: 94.4vw;
   max-width: 1440px;
 }
 
@@ -15,29 +15,29 @@
   max-width: 1320px;
 }
 
-@media (max-width: 1020px) {
+@media only screen and (max-width: 1024px) {
   .wrapper {
     width: 100%;
   }
 
-  main {
+  .main {
+    margin: auto;
     display: block;
-    width: 100%;
+    width: 83vw;
   }
 
 }
+
 @media only screen and (max-width: 820px) {
   .main {
     margin-top: 70px;
   }
 }
+
 @media only screen and (max-width: 390px) {
   .main {
     max-width: 390px;
   }
 }
 
-@media only screen and (max-width: 1020px) {
-
-}
 

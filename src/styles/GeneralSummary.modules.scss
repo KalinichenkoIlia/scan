@@ -1,4 +1,21 @@
 .summary {
   display: flex;
   flex-direction: column;
+
+  h2 {
+    font-family: Ferry, sans-serif ;
+    font-size: 30px;
+  }
+  p {
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .summary {
+
+    align-items: start;
+  }
+
 }

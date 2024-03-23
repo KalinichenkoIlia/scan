@@ -10,23 +10,32 @@
   width: 100%;
   height: 137px;
   list-style: none;
+
   img {
     padding-left: 60px;
   }
+
   ul {
     text-align: right;
     size: 14px;
     padding-right: 20px;
     color: $basic-color-white;
     list-style: none;
-    li:nth-child(3){
+
+    li:nth-child(3) {
       padding-top: 10px;
     }
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .footer {
+    width: 97vw;
+  }
 
-@media (max-width: 1000px) {
+}
+
+@media only screen and (max-width: 1000px) {
   .footer {
     img {
       padding-left: 20px;

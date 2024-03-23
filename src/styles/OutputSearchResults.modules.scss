@@ -9,8 +9,11 @@
 .banner {
   width: 100%;
   display: flex;
-
   justify-content: space-between;
+  img {
+    max-width: 552px;
+    width: 41vw;
+  }
 }
 .banner_content {
   h2 {
@@ -20,6 +23,18 @@
   p {
     font-family: Inter, sans-serif;
     font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 1024px){
+  .search_results {
+    margin-top: 93px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .search_results {
+    margin-top: 0;
   }
 
 }

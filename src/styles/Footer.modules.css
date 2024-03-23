@@ -22,7 +22,12 @@
   padding-top: 10px;
 }
 
-@media (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
+  .footer {
+    width: 97vw;
+  }
+}
+@media only screen and (max-width: 1000px) {
   .footer img {
     padding-left: 20px;
   }
