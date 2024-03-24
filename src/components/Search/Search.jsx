@@ -14,7 +14,7 @@ import OutputSearchResults from './OutputSearchResults'
 function Search(){
     const {isAuthenticated, setAuth} = useContext(AuthContext);
     const navigate = useNavigate();
-    const [value, setValue] = useState({startDate:"", endDate: '', values: {}});
+    const [values, setValue] = useState({startDate:"", endDate: '', values: {}});
     const overlayRef = useRef();
 
     const openSearch = () => {
@@ -24,9 +24,6 @@ function Search(){
     const closeSearch = () => {
         overlayRef.current.style.width = '0%';
     };
-    useEffect(() => {
-        console.log(value)
-    })
 
 
     return(
@@ -55,7 +52,7 @@ function Search(){
                     &times;
                 </button>
                 <div className={styles.overlay_content}>
-                    <OutputSearchResults/>
+                     <OutputSearchResults values={values}/>
                 </div>
 
             </div>

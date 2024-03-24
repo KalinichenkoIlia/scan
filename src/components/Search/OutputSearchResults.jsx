@@ -2,10 +2,11 @@ import React, {useContext, useEffect, useState} from "react";
 import styles from '../../styles/OutputSearchResults.modules.css'
 import imgWoman from '../../images/search/woman.svg'
 import GeneralSummary from "./GeneralSummary";
+import useUpdateData from "./useUpdateData";
 
 
-function OutputSearchResults(){
 
+function OutputSearchResults(props){
     return(
         <div className={styles.search_results}>
             <div className={styles.banner}>
@@ -17,7 +18,7 @@ function OutputSearchResults(){
                 </div>
             <img src={imgWoman} alt='woman'/>
             </div>
-            <GeneralSummary/>
+            <GeneralSummary histograms_data={useUpdateData(props.values)}/>
         </div>
     )
 }

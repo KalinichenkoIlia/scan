@@ -1,8 +1,8 @@
 import styles from '../../styles/UI/Loader.modules.css'
 
 
-export const Loader = () => (
-    <span className={styles.loader}></span>
+export const Loader = ({fontSize}) => (
+    <span style={{fontSize: fontSize }} className={styles.loader}></span>
 )
 
 

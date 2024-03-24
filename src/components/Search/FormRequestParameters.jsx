@@ -33,7 +33,7 @@ function FormRequestParameters(props) {
                         />
                         <label className={styles.tonality}>
                             Тональность
-                            <Field as="select" htmlFor='select' name='select' id='select'>
+                            <Field as="select" htmlFor="tonality" name="tonality" id="tonality">
                                 <option value='any'>Любая</option>
                                 <option value='positive'>Позитивная</option>
                                 <option value='negative'>Негативная</option>
@@ -41,8 +41,8 @@ function FormRequestParameters(props) {
                         </label>
 
                         <Input
-                            id='countDocuments'
-                            name='countDocuments'
+                            id="limit"
+                            name="limit"
                             label='Количество документов в выдаче*'
                             placeholder='От 1 до 1000'
                         />

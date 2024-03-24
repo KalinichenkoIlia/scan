@@ -27,7 +27,7 @@ const App = () => {
             <AuthContext.Provider value={{isAuthenticated,setAuth }}>
                 <Routes basename='/'>
                     <Route path="/" element={<Main/>}>
-                        <Route index element={<OutputSearchResults/>} />
+                        <Route index element={<Search/>} />
                         <Route path='/login' element={<Authorization/>}/>
                         <Route path='/search' element={<Search/>} />
                     </Route>

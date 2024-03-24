@@ -12,7 +12,7 @@ import {Link} from "react-router-dom";
 
 function Header() {
 
-    let {isAuthenticated} = useContext(AuthContext);
+    const {isAuthenticated} = useContext(AuthContext);
 
     return (
         <header className={styles.header}>

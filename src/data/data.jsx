@@ -2,7 +2,10 @@ import styles from '../styles/SummarySlider.module.css'
 
 export const login_url = 'https://gateway.scan-interfax.ru/api/v1/account/login';
 
-export const account_info =  'https://gateway.scan-interfax.ru/api/v1/account/info';
+export const account_info_url =  'https://gateway.scan-interfax.ru/api/v1/account/info';
+
+export const histograms_url = 'https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms';
+
 
 export  const settingsSlider = {
 
@@ -50,10 +53,11 @@ export  const settingsSlider = {
             }
         },
         {
-            breakpoint: 480,
+            breakpoint: 540,
             settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                infinite: false,
             }
         }
     ]

@@ -202,12 +202,27 @@
     left: 190px;
   }
 }
+@media only screen and (max-width: 540px) {
+  .nav_container_active .menu_list {
+    left: 130px;
+  }
+}
 @media only screen and (max-width: 414px) {
   .nav_container_active .menu_list {
     left: 60px;
   }
   .logo {
     padding-left: 0;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .nav_container_active .menu_list {
+    left: 50px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .nav_container_active .menu_list {
+    left: 70px;
   }
 }
 @media only screen and (max-width: 375px) {

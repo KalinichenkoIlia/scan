@@ -13,6 +13,28 @@
   margin-bottom: 90px;
 }
 
+.left_part {
+  padding: 0 30px 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px 0 0 10px;
+  position: relative;
+  z-index: 1;
+  width: 133px;
+  max-height: 158px;
+  background-color: #029491;
+}
+.left_part p {
+  color: #FFFFFF;
+  font-family: Inter, sans-serif, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+}
+.left_part p:nth-child(2) {
+  margin: 10px 0 10px 0;
+}
+
 .box {
   width: 140px;
   height: 158px;
@@ -46,28 +68,6 @@
   padding-top: 10px;
 }
 
-.left_part {
-  padding: 0 30px 0 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 10px 0 0 10px;
-  position: relative;
-  z-index: 1;
-  width: 133px;
-  max-height: 158px;
-  background-color: #029491;
-}
-.left_part p {
-  color: #FFFFFF;
-  font-family: Inter, sans-serif, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-}
-.left_part p:nth-child(2) {
-  margin: 10px 0 10px 0;
-}
-
 .slick_slider {
   position: relative;
   right: 20px;
@@ -95,10 +95,6 @@
   position: relative;
   left: 3px;
   z-index: 5;
-}
-
-.slick_slider > .slick-list > .slick-track > .slick-slide > .box {
-  font-size: 30px;
 }
 
 .slider_container div:nth-child(2) {
@@ -141,8 +137,66 @@
   }
 }
 @media only screen and (max-width: 820px) {
+  * {
+    z-index: 0;
+  }
   .slick_slider {
     right: 50px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .slider_container {
+    flex-direction: column;
+    height: 140px;
+  }
+  .slider_container div:nth-child(2) {
+    width: 87vw;
+    height: 70px;
+  }
+  .slider_container div:nth-child(2) div {
+    width: 100%;
+    height: 70px;
+  }
+  .left_part {
+    flex-direction: row;
+    width: 100%;
+    height: 70px;
+    padding: 0;
+    border-radius: 10px 10px 0 0;
+  }
+  .left_part p {
+    margin: auto;
+  }
+  .left_part p:nth-child(2) {
+    margin: auto;
+  }
+  .slick_slider {
+    right: 0;
+  }
+  .slick_slider button:nth-child(1) {
+    right: 22px;
+  }
+  .box {
+    width: 67vw !important;
+  }
+  .content_box {
+    flex-direction: column !important;
+  }
+  .content_box span {
+    display: none;
+  }
+  .content_box_text {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+  .content_box_text p {
+    padding: 0 !important;
+  }
+  .content_box_text p:nth-child(1) {
+    margin-left: 16px;
+  }
+  .content_box_text p:nth-child(2) {
+    margin: 0 30px 0 0;
   }
 }
 

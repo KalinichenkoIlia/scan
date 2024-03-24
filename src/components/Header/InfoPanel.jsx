@@ -1,6 +1,6 @@
 import * as React from "react";
 import axios from "axios";
-import {account_info} from "../../data/data";
+import {account_info_url} from "../../data/data";
 import styles from '../../styles/InfoPanel.modules.css';
 import {AuthContext} from "../context/Contexts";
 import {Loader} from "../UI/Loader";
@@ -20,11 +20,11 @@ class InfoPanel extends React.Component {
     }
 
     eventInfo() {
-        const accessToken = localStorage.getItem('accessToken');
+        let accessToken = localStorage.getItem('accessToken');
         if (accessToken) {
             (async () => {
                     await axios.get(
-                        account_info, {headers: {"Authorization": `Bearer ${accessToken}`}})
+                        account_info_url, {headers: {"Authorization": `Bearer ${accessToken}`}})
                         .then(response => {
                             this.setState({
                                 info: response.data['eventFiltersInfo'],

@@ -1,8 +1,10 @@
 
 .loader {
+  margin: auto ;
+  display: block;
   color: #8a7f7f;
   font-size: 4px;
-  width: 1em;
+  width: 1em ;
   height: 1em;
   border-radius: 50%;
   position: relative;
@@ -63,10 +65,13 @@
 @media only screen and (max-width: 744px) {
 
   .loader {
-    margin-left: 65px;
   }
 }
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 540px) {
+  .loader {
+    padding: initial;
+
+  }
 
 }
 

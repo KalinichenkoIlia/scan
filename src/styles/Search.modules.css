@@ -47,7 +47,7 @@
 .overlay {
   margin-top: 93px;
   height: 100%;
-  width: 100%;
+  width: 0;
   position: fixed;
   z-index: 0;
   top: 0;
