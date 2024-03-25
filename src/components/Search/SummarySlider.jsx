@@ -6,25 +6,26 @@ import {Loader} from "../UI/Loader";
 
 
 function SummarySlider(props) {
-    console.log(props.data.data)
-    let newData = {}
+    const {data} = props
+    let keys;
+    let organizeData = {}
 
     useEffect(() => {
 
+        if (props.data) {
 
-        if (props.data.data) {
+            data[1].data.forEach((el, index) => {
+                organizeData[el.date.substring(0, 10)] = {id: index, riskFactors: el.value, totalDocuments: null}
+            });
 
-            newData = props.data.data[0].data.map(function (el) {
+            data[0].data.forEach((el) => {
 
-                return {[el.date.substring(0, 10)]: {totalDocuments: el.value}}
+                organizeData[el.date.substring(0, 10)].totalDocuments = el.value
             })
-
-
-            console.log(newData);
-
-
+            keys = Object.keys(organizeData);
+            console.log(keys)
         }
-    }, [props.data])
+    }, [])
 
     return (
         <div className={styles.slider_container}>
@@ -35,16 +36,28 @@ function SummarySlider(props) {
             </div>
             {!props.isLoaded ? <Loader fontSize='6px'/> :
                 <Slider  {...settingsSlider}>
-                    <div className={styles.box}>
-                        <div className={styles.content_box}>
-                            <span></span>
-                            <div className={styles.content_box_text}>
-                                <p>17.09.9999</p>
-                                <p>25</p>
-                                <p>6</p>
-                            </div>
+
+                    {keys.map(key => (<div className={styles.box}>
+
+                            {organizeData[key].map(infoSummary => (
+
+                                <div className={styles.content_box}>
+
+                                    <span></span>
+
+                                    <div className={styles.content_box_text}>
+
+                                        <p>{key}</p>
+                                        <p>{infoSummary.totalDocuments}</p>
+                                        <p>{infoSummary.riskFactors}</p>
+
+                                    </div>
+                                </div>
+
+                            ))}
                         </div>
-                    </div>
+                    ))}
+
 
                 </Slider>}
 

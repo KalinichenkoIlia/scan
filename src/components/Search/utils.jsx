@@ -1,3 +1,5 @@
-export function organizeData(data){
-    return [];
+export function organizeData(data) {
+
+
+
 }

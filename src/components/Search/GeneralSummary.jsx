@@ -70,7 +70,7 @@ class GeneralSummary extends React.Component {
                 <h2>Общая сводка</h2>
                 <p>Найдено {} вариантов</p>
                 <div>
-                    <SummarySlider data={this.state.data} isLoaded={this.state.isLoaded}/>
+                    <SummarySlider data={this.state.data.data} isLoaded={this.state.isLoaded}/>
                 </div>
 
             </div>
