@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 
 import styles from '../../styles/GeneralSummary.modules.css'
 import SummarySlider from "./SummarySlider";
 import axios from "axios";
-import {histograms_url} from "../../data/data";
+import {HISTOGRAMS_URL} from "../../data/data";
 import {useNavigate} from "react-router-dom";
-
+import {organizeData} from "./utils";
 
 
 class GeneralSummary extends React.Component {
@@ -15,7 +15,7 @@ class GeneralSummary extends React.Component {
         this.state = {
             isLoaded: false,
             histograms_data: this.props.histograms_data,
-            data: {}
+            data: []
         }
     }
 
@@ -35,27 +35,25 @@ class GeneralSummary extends React.Component {
         let accessToken = localStorage.getItem('accessToken');
         if (accessToken) {
             (async () => {
-
                     await axios.post(
-                        histograms_url,
+                       HISTOGRAMS_URL,
                         this.props.histograms_data,
                         {
                             headers:
-                                {"Authorization": `Bearer ${accessToken}`}
-                        })
+                                {"Authorization": `Bearer ${accessToken}`}})
 
                         .then(response => {
                             this.setState({
-                                data: response.data,
+                                data: organizeData(response.data.data),
                                 isLoaded: true
                             });
+
+                            this.props.setSummaryLoaded(true)
 
                         }).catch(error => {
                             console.error(error)
                         })
-                }
-            )
-            ();
+                })();
         } else {
             localStorage.removeItem('accessToken');
             const navigate = useNavigate();
@@ -68,9 +66,9 @@ class GeneralSummary extends React.Component {
         return (
             <div className={styles.summary}>
                 <h2>Общая сводка</h2>
-                <p>Найдено {} вариантов</p>
+                <p>Найдено {Object.keys(this.state.data).length} вариантов</p>
                 <div>
-                    <SummarySlider data={this.state.data.data} isLoaded={this.state.isLoaded}/>
+                    <SummarySlider data={this.state.data} isLoaded={this.state.isLoaded}/>
                 </div>
 
             </div>

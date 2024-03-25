@@ -1,11 +1,12 @@
 import styles from '../styles/SummarySlider.module.css'
 
-export const login_url = 'https://gateway.scan-interfax.ru/api/v1/account/login';
+export const LOGIN_URL = 'https://gateway.scan-interfax.ru/api/v1/account/login';
 
-export const account_info_url =  'https://gateway.scan-interfax.ru/api/v1/account/info';
+export const ACCOUNT_INFO_URL =  'https://gateway.scan-interfax.ru/api/v1/account/info';
 
-export const histograms_url = 'https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms';
+export const HISTOGRAMS_URL = 'https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms';
 
+export const OBJECT_SEARCH_URL = 'https://gateway.scan-interfax.ru/api/v1/objectsearch/'
 
 export  const settingsSlider = {
 
@@ -62,3 +63,66 @@ export  const settingsSlider = {
         }
     ]
 };
+
+export function updateHistograms(data) {
+    return ({
+            "issueDateInterval": {
+                "startDate": `${data.startDate}`,
+                "endDate": `${data.endDate}`
+            },
+            "searchContext": {
+                "targetSearchEntitiesContext": {
+                    "targetSearchEntities": [
+                        {
+                            "type": "company",
+                            "sparkId": null,
+                            "entityId": null,
+                            "inn": parseInt(data.values.inn),
+                            "maxFullness": true,
+                            "inBusinessNews": null
+                        }
+                    ],
+                    "onlyMainRole": true,
+                    "tonality": `${data.values.tonality}`,
+                    "onlyWithRiskFactors": true,
+                    "riskFactors": {
+                        "and": [],
+                        "or": [],
+                        "not": []
+                    },
+                    "themes": {
+                        "and": [],
+                        "or": [],
+                        "not": []
+                    }
+                },
+                "themesFilter": {
+                    "and": [],
+                    "or": [],
+                    "not": []
+                }
+            },
+            "searchArea": {
+                "includedSources": [],
+                "excludedSources": [],
+                "includedSourceGroups": [],
+                "excludedSourceGroups": []
+            },
+            "attributeFilters": {
+                "excludeTechNews": true,
+                "excludeAnnouncements": true,
+                "excludeDigests": true
+            },
+            "similarMode": "duplicates",
+            "limit": parseInt(data.values.limit)
+            ,
+            "sortType": "issueDate",
+            "sortDirectionType": "desc",
+            "intervalType": "month",
+            "histogramTypes": [
+                "totalDocuments",
+                "riskFactors"
+            ]
+        }
+    )
+}

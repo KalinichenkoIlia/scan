@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
-import {login_url} from "../../data/data";
+import {LOGIN_URL} from "../../data/data";
 import styles from '../../styles/LoginForm.modules.css'
 import {InputField} from "../UI/input/InputField";
 import iconsApi from '../../images/loginForm/api.svg'
@@ -29,7 +29,7 @@ function LoginForm() {
         event.preventDefault();
         try {
             const response = await axios.post(
-                login_url,
+                LOGIN_URL,
                 {
                     'login': `${loginInData.nickname}`,
                     'password': `${loginInData.password}`
