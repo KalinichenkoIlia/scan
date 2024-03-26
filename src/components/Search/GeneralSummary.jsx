@@ -1,5 +1,4 @@
 import React from "react";
-
 import styles from '../../styles/GeneralSummary.modules.css'
 import SummarySlider from "./SummarySlider";
 import axios from "axios";
@@ -35,25 +34,27 @@ class GeneralSummary extends React.Component {
         let accessToken = localStorage.getItem('accessToken');
         if (accessToken) {
             (async () => {
-                    await axios.post(
-                       HISTOGRAMS_URL,
-                        this.props.histograms_data,
-                        {
-                            headers:
-                                {"Authorization": `Bearer ${accessToken}`}})
+                await axios.post(
+                    HISTOGRAMS_URL,
+                    this.props.histograms_data,
+                    {
+                        headers:
+                            {"Authorization": `Bearer ${accessToken}`}
+                    })
 
-                        .then(response => {
-                            this.setState({
-                                data: organizeData(response.data.data),
-                                isLoaded: true
-                            });
+                    .then(response => {
+                        this.setState({
+                            data: organizeData(response.data.data),
+                            isLoaded: true
+                        });
+                        console.log(response.data)
 
-                            this.props.setSummaryLoaded(true)
+                        this.props.setSummaryLoaded(true)
 
-                        }).catch(error => {
-                            console.error(error)
-                        })
-                })();
+                    }).catch(error => {
+                        console.error(error)
+                    })
+            })();
         } else {
             localStorage.removeItem('accessToken');
             const navigate = useNavigate();
@@ -67,7 +68,8 @@ class GeneralSummary extends React.Component {
             <div className={styles.summary}>
                 <h2>Общая сводка</h2>
                 <p>Найдено {Object.keys(this.state.data).length} вариантов</p>
-                <div>
+                <div className={styles.slider_container}>
+
                     <SummarySlider data={this.state.data} isLoaded={this.state.isLoaded}/>
                 </div>
 

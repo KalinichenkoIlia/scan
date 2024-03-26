@@ -1,0 +1,156 @@
+.document {
+  max-width: 641px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  font-family: Inter, sans-serif;
+}
+
+.wrapper {
+  margin: 30px;
+}
+
+.date {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: #949494;
+}
+.date time {
+  margin-right: 40px;
+}
+.date a {
+  color: #949494;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.heading h3 {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 31.47px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+.heading span {
+  margin-bottom: 20px;
+  font-size: 12px;
+  max-width: 157px;
+  height: 22px;
+  background-color: #FFB64F;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+.heading span p {
+  margin: 3px 0 3px 0;
+}
+
+.img {
+  border-radius: 10px;
+  max-width: 581px;
+}
+
+.text {
+  font-size: 16px;
+  opacity: 50%;
+  line-height: 19.36px;
+}
+
+.article_footer {
+  font-size: 16px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.article_footer button {
+  cursor: pointer;
+  background-color: #7CE3E1;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  width: 223px;
+  height: 46.54px;
+  border-radius: 5px;
+  border: none;
+}
+.article_footer p {
+  color: #949494;
+}
+.article_footer button:hover {
+  background-color: #33a9a6;
+}
+.article_footer button:active {
+  background-color: #029491;
+}
+
+@media only screen and (max-width: 1280px) {
+  .heading h3 {
+    font-size: 24px;
+  }
+  .img {
+    max-width: 500px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .document {
+    max-width: 540px;
+  }
+  .heading h3 {
+    font-size: 19px;
+  }
+  .text {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .document {
+    width: 335px;
+  }
+  .wrapper {
+    margin: 14px;
+  }
+  .date {
+    white-space: nowrap;
+    font-size: 14px;
+  }
+  .date time {
+    margin-right: 10px;
+  }
+  .heading h3 {
+    line-height: 22.99px;
+  }
+  .heading span {
+    width: 132px;
+    height: 20px;
+    font-size: 10px;
+    line-height: 12.1px;
+  }
+  .img {
+    width: 297px;
+    height: 158px;
+  }
+  .text {
+    line-height: 14.52px;
+    font-size: 12px;
+  }
+  .article_footer {
+    align-items: end;
+    margin-top: 40px;
+  }
+  .article_footer button {
+    font-size: 14px;
+    width: 195px;
+    height: 40.07px;
+  }
+  .article_footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=Document.modules.css.map */

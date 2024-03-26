@@ -29,7 +29,7 @@ function Home () {
                     <img src={HumanBanner} alt='human'/>
                 </div>
                 <div className={styles.wrapper}>
-                        <h1 className={styles.text_above} >почему именно мы</h1>
+                        <h2 className={styles.text_above} >почему именно мы</h2>
                         <Carousel/>
                         </div>
                         <div className={styles.human}>

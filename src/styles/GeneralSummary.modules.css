@@ -11,6 +11,12 @@
   font-family: Inter, sans-serif;
 }
 
+.slider_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 @media only screen and (max-width: 1024px) {
   .summary {
     align-items: start;

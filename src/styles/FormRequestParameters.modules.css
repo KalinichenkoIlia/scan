@@ -39,7 +39,6 @@
   align-items: start;
   justify-content: start;
   width: 372px;
-  height: 94px;
 }
 .date p {
   font-size: 18px;
@@ -70,7 +69,8 @@
   margin: 0 40px 40px 0;
 }
 .wrapper_checkbox div p {
-  margin: 0;
+  line-height: 16.94px;
+  margin: 10px 0 0 0;
   opacity: 40%;
 }
 
@@ -118,6 +118,7 @@
     margin-right: 0;
   }
   .wrapper_checkbox div p {
+    margin-top: 10px;
     font-size: 14px;
   }
   .button {
@@ -133,7 +134,6 @@
     align-items: center;
   }
   .section_input {
-    padding-top: 20px;
     margin: 0;
   }
   .button {
@@ -159,13 +159,20 @@
   .section_input {
     align-items: center;
   }
+  .tonality {
+    margin-top: 30px;
+  }
   .tonality select {
     width: 335px;
   }
   .date > div {
+    height: 200px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+  }
+  .date {
+    height: 170px;
   }
   .date p {
     margin-left: 15px;

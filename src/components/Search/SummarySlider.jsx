@@ -22,7 +22,7 @@ function SummarySlider(props) {
                             <div className={styles.content_box}>
                                 <span></span>
                                 <div className={styles.content_box_text}>
-                                    <p>{key}</p>
+                                    <p>{key.split('-').reverse().join('.')}</p>
                                     <p>{props.data[key].totalDocuments}</p>
                                     <p>{props.data[key].riskFactors}</p>
                                 </div>

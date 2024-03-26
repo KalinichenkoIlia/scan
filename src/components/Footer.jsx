@@ -2,9 +2,9 @@ import * as React from "react";
 import styles from '../styles/Footer.modules.css'
 import logo from '../images/Logo/logo2.svg'
 
-const Footer = () => {
+const Footer = (props) => {
     return (
-        <footer className={styles.footer}>
+        <footer style={props.styles} className={styles.footer}>
             <img src={logo} alt='logo'/>
             <ul>
                 <li>г. Москва, Цветной б-р, 40</li>

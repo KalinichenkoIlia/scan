@@ -25,6 +25,7 @@
     width: 743px;
 
     h1 {
+      line-height: 72px;
       margin: 0;
       font-family: Ferry, sans-serif;
       font-size: 3.3vw;
@@ -36,6 +37,7 @@
       padding-bottom: 60px;
 
       h3 {
+        line-height: 24.2px;
         white-space: nowrap;
         margin: 0;
         font-size: 1.1vw;
@@ -59,6 +61,7 @@
     max-width: 200vw;
   }
 }
+
 .text_above {
   white-space: nowrap;
   padding-bottom: 40px;
@@ -71,6 +74,9 @@
 }
 
 @media (max-width: 1024px) {
+  .main {
+    margin-top: 90px;
+  }
 
   .banner {
     .content {
@@ -134,6 +140,9 @@
 }
 
 @media only screen and (max-width: 414px) {
+  .main {
+    margin-top: 0;
+  }
   .content {
     div {
       h3 {

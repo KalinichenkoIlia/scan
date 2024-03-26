@@ -1,0 +1,177 @@
+@import "./basic/variables.color";
+
+.document {
+  max-width: 641px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 #00000033;
+  font-family: Inter, sans-serif;
+}
+
+.wrapper {
+  margin: 30px;
+}
+
+.date {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: #949494;
+
+  time {
+    margin-right: 40px;
+  }
+
+  a {
+    color: #949494;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  h3 {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 31.47px;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
+
+  span {
+    margin-bottom: 20px;
+    font-size: 12px;
+    max-width: 157px;
+    height: 22px;
+    background-color: $additional-color-orange;
+    border-radius: 5px;
+    vertical-align: middle;
+
+    p {
+      margin: 3px 0 3px 0;
+    }
+  }
+}
+
+.img {
+  border-radius: 10px;
+  max-width: 581px;
+}
+
+.text {
+  font-size: 16px;
+  opacity: 50%;
+  line-height: 19.36px;
+}
+
+.article_footer {
+  font-size: 16px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+
+  button {
+    cursor: pointer;
+    background-color: $additional-color-Turquoise-blue-Crayola;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    width: 223px;
+    height: 46.54px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  p {
+    color: #949494;
+  }
+
+  button:hover {
+    background-color: #33a9a6;
+  }
+
+  button:active {
+    background-color: #029491;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .heading {
+    h3 {
+      font-size: 24px;
+    }
+  }
+  .img {
+    max-width: 500px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .document {
+    max-width: 540px;
+  }
+  .heading {
+    h3 {
+      font-size: 19px;
+    }
+  }
+  .text {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .document {
+    width: 335px;
+
+  }
+  .wrapper {
+    margin: 14px;
+  }
+  .date {
+    white-space: nowrap;
+    font-size: 14px;
+    time {
+      margin-right: 10px;
+    }
+  }
+  .heading {
+    h3 {
+
+      line-height: 22.99px;
+    }
+    span {
+      width: 132px;
+      height: 20px;
+      font-size: 10px;
+      line-height: 12.1px;
+    }
+
+  }
+  .img {
+    width: 297px;
+    height: 158px;
+  }
+  .text {
+    line-height: 14.52px;
+    font-size: 12px;
+  }
+  .article_footer {
+    align-items: end;
+    margin-top: 40px;
+    button {
+      font-size: 14px;
+      width: 195px;
+      height: 40.07px;
+    }
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+
+}
+

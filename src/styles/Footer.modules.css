@@ -12,11 +12,13 @@
   padding-left: 60px;
 }
 .footer ul {
+  line-height: 16.94px;
   text-align: right;
   size: 14px;
   padding-right: 20px;
   color: #FFFFFF;
   list-style: none;
+  white-space: nowrap;
 }
 .footer ul li:nth-child(3) {
   padding-top: 10px;
@@ -30,6 +32,9 @@
 @media only screen and (max-width: 1000px) {
   .footer img {
     padding-left: 20px;
+  }
+  .footer ul {
+    padding: 0 10px 0 0;
   }
 }
 

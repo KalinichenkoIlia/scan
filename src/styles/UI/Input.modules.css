@@ -40,6 +40,12 @@
 }
 
 @media only screen and (max-width: 430px) {
+  .wrapper {
+    margin-top: 40px;
+  }
+  .wrapper label {
+    text-align: start;
+  }
   .wrapper .input {
     width: 335px;
   }

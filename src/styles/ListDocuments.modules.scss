@@ -1,0 +1,21 @@
+.list_documents {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(641px, 1fr));
+  justify-content: center;
+  grid-template-rows: auto;
+  grid-gap: 2vw;
+  margin-bottom: 30px;
+
+}
+
+@media only screen and (max-width: 1280px) {
+  .list_documents {
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .list_documents {
+    grid-template-columns: none;
+  }
+}

@@ -30,13 +30,11 @@ function Search(){
         <>
             <div className={styles.wrapper_search}>
                 <div>
-                    <h2 className={styles.h2}>Найдите необходимые</h2>
-                    <h2 className={styles.h2}>данные в пару кликов.</h2>
+                    <h1 className={styles.h1}>Найдите необходимые</h1>
+                    <h1 className={styles.h1}>данные в пару кликов.</h1>
                     <h4 className={styles.h4}>Задайте параметры поиска.<br/>
                    Чем больше заполните, тем точнее поиск</h4>
                     <FormRequestParameters openSearch={openSearch} setValue={setValue}/>
-                    <button onClick={openSearch} className={styles.open_button}>
-                    </button>
                 </div>
                 <img className={styles.img_document} src={document} alt='document'/>
                 <div className={styles.images_container}>

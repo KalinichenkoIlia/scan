@@ -16,11 +16,13 @@
   }
 
   ul {
+    line-height: 16.94px;
     text-align: right;
     size: 14px;
     padding-right: 20px;
     color: $basic-color-white;
     list-style: none;
+    white-space: nowrap;
 
     li:nth-child(3) {
       padding-top: 10px;
@@ -39,6 +41,9 @@
   .footer {
     img {
       padding-left: 20px;
+    }
+    ul {
+      padding:0 10px 0 0;
     }
   }
 }

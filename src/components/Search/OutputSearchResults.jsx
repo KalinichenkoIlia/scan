@@ -5,6 +5,7 @@ import GeneralSummary from "./GeneralSummary";
 import {updateHistograms, OBJECT_SEARCH_URL} from "../../data/data";
 import axios from "axios";
 import ListDocuments from "./ListDocuments";
+import Footer from "../Footer";
 
 let accessToken = localStorage.getItem('accessToken');
 
@@ -12,10 +13,12 @@ let accessToken = localStorage.getItem('accessToken');
 function OutputSearchResults(props) {
     const [summaryLoaded, setSummaryLoaded] = useState(false);
     const [documentsId, setDocumentsId] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
 
         if (summaryLoaded) {
+
             (async () => {
                 await axios.post(
                     OBJECT_SEARCH_URL,
@@ -25,10 +28,8 @@ function OutputSearchResults(props) {
                             {"Authorization": `Bearer ${accessToken}`}
                     })
                     .then(response => {
-
                         setDocumentsId(response.data);
-                        console.log(response.data);
-
+                        setLoading(true)
                     }).catch(error => {
                         console.log(error)
                     })
@@ -41,16 +42,18 @@ function OutputSearchResults(props) {
         <div className={styles.search_results}>
             <div className={styles.banner}>
                 <div className={styles.banner_content}>
-                    <h2>Ищем. Скоро <br/>будут результаты</h2>
+                    <h1>Ищем. Скоро <br/>будут результаты</h1>
                     <p>
                         Поиск может занять некоторое время, <br/> просим сохранять терпение.
                     </p>
                 </div>
                 <img src={imgWoman} alt='woman'/>
             </div>
-            <GeneralSummary setSummaryLoaded={setSummaryLoaded} histograms_data={updateHistograms(props.values)}/>
+            <GeneralSummary setSummaryLoaded={setSummaryLoaded} documentsId={documentsId} histograms_data={updateHistograms(props.values)}/>
             <h2>Список документов</h2>
-            <ListDocuments documentsId={documentsId}/>
+
+            {loading ? <ListDocuments documentsId={documentsId}/> : '' }
+        <Footer styles={{marginBottom: '90px'}}/>
         </div>
     )
 }

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["UserPanel.modules.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;EACA;;AACA;EACE;;AAEA;EACE;EACA;EACA;;AAEF;EACE;EACA;EACA;EACA;;;AAKN;EACE;EACA;EACA;;;AAGF;EACE;IACE","file":"UserPanel.modules.css"}
+{"version":3,"sourceRoot":"","sources":["UserPanel.modules.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;EACA;EACA;;AACA;EACE;;AAEA;EACE;EACA;EACA;;AAEF;EACE;EACA;EACA;EACA;;;AAKN;EACE;EACA;EACA;;;AAEF;EACE;IACE;;;AAGJ;EACE;IACE","file":"UserPanel.modules.css"}

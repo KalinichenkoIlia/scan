@@ -8,6 +8,10 @@ export const HISTOGRAMS_URL = 'https://gateway.scan-interfax.ru/api/v1/objectsea
 
 export const OBJECT_SEARCH_URL = 'https://gateway.scan-interfax.ru/api/v1/objectsearch/'
 
+export const DOCUMENTS_URL = 'https://gateway.scan-interfax.ru/api/v1/documents/'
+
+
+
 export  const settingsSlider = {
 
     infinite: false,

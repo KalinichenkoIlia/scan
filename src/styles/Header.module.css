@@ -15,7 +15,7 @@
   z-index: 1;
 }
 .header .logo {
-  margin: auto;
+  margin-left: 20px;
   position: relative;
 }
 
@@ -54,7 +54,7 @@
 
 @media only screen and (max-width: 1280px) {
   .header {
-    max-width: 1250px;
+    max-width: 1280px;
   }
 }
 @media only screen and (max-width: 1024px) {

@@ -1,7 +1,6 @@
 .summary {
   display: flex;
   flex-direction: column;
-
   h2 {
     font-family: Ferry, sans-serif ;
     font-size: 30px;
@@ -10,6 +9,12 @@
     font-size: 18px;
     font-family: Inter, sans-serif;
   }
+}
+
+.slider_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
