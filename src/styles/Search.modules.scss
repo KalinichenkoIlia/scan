@@ -1,9 +1,11 @@
+@import "./basic/variables.color";
 .wrapper_search {
   max-width: 1320px;
   width: 82vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 30px;
 
   div {
     .h1 {
@@ -82,15 +84,15 @@
 .open_button {
   margin-top: 30px;
   padding: 10px 30px;
-  background: #2196f3;
-  color: #029491;
+  background: $search-class-open_button-background;
+  color: $basic-color-turquoise;
   cursor: pointer;
   border: none;
   border-radius: 10px;
 }
 
 .open_button:hover {
-  background: #0b7dda;
+  background: $search-class-open_button-hover-background;
 }
 
 
@@ -103,7 +105,7 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  color: #029491;
+  color: $basic-color-turquoise;
 }
 
 

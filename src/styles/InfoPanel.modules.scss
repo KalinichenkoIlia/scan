@@ -1,4 +1,4 @@
-
+@import "./basic/variables.color";
 .panel {
   width: 100%;
   display: flex;
@@ -18,13 +18,13 @@
     list-style: none;
     .companyLimit{
       h2 {
-        color: black;
+        color: $companyLimit-h2-color;
       }
     }
     .usedCompanyCount {
 
       h2 {
-        color:  #8AC540;
+        color:  $usedCompanyCount-h2-color;
       }
     }
 

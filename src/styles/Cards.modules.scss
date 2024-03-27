@@ -14,7 +14,7 @@
     border-radius: 12px;
     width: 415px;
     height: 540px;
-    background-color: #FFFFFF;
+    background-color: $card-background-color;
     @media only screen and (max-width: 455px){
       width:335px;
       height: 512px;
@@ -63,7 +63,7 @@
       }
     }
     h2 {
-      color: black;
+      color: $basic-color-black;
     }
     ul {
       color: $basic-color-black;
@@ -76,7 +76,7 @@
       height: 59px;
       border-radius: 6px;
       color: $basic-color-white;
-      background-color: $button-card-color;
+      background-color: $button-standard-color;
       border: none;
       font-size: 20px;
       font-family: Inter, sans-serif;

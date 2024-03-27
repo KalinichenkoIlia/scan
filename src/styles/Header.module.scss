@@ -4,7 +4,7 @@
 .header {
   margin: auto;
   max-width: 1440px;
-  background-color: #FFFFFF;
+  background-color: $header-background-color;
   position: fixed;
   justify-content: space-between;
   left: 0;
@@ -78,7 +78,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #fdfdfe;
+    background-color: $header-background-color;
     grid-template-columns: 0.5fr 1fr 1fr;
     .logo{
       margin: 0;

@@ -4,10 +4,12 @@ import {DOCUMENTS_URL} from "../../data/data";
 import {Link} from "react-router-dom";
 import styles from '../../styles/Document.modules.css'
 import iMg from '../../images/22.svg'
+import XMLViewer from 'react-xml-viewer'
+import {xmlParser} from "./utils";
 
 
 let accessToken = localStorage.getItem('accessToken');
-const xml = new DOMParser();
+const parser = new DOMParser();
 
 
 function Document(props) {
@@ -25,12 +27,15 @@ function Document(props) {
                 {
                     headers:
                         {"Authorization": `Bearer ${accessToken}`}
+
                 })
                 .then(response => {
                     setDocument(response.data[0].ok);
-                    console.log(response.data[0])
+                    console.log(response.data[0].ok)
+                    xmlParser(response.data[0].ok.content.markup)
                     setLoading(true)
-                    console.log(response.data[0].ok.content.markup)
+
+
                 }).catch(error => {
                     console.log(error)
                 })
@@ -59,11 +64,7 @@ function Document(props) {
                     </div>
                     <img className={styles.img} src={iMg}/>
                     <div className={styles.text}>
-                        <xml>
-                            {document.content.markup}
-                        </xml>
-
-
+                        {document.content.markup}
                     </div>
                     <div className={styles.article_footer}>
                         <Link to={document.url}>

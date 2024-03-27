@@ -1,11 +1,35 @@
+@import "./basic/variables.color.scss";
+
 .list_documents {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(641px, 1fr));
   justify-content: center;
-  grid-template-rows: auto;
   grid-gap: 2vw;
   margin-bottom: 30px;
 
+}
+
+.wrapper_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  button {
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    width: 305px;
+    height: 59px;
+    font-size: 22px;
+    line-height: 26.63px;
+    font-family: Inter, sans-serif;
+    background-color: $button-banner-color;
+    color: #FFFFFF;
+  }
+  button:active {
+  opacity: 50%;
+  }
 }
 
 @media only screen and (max-width: 1280px) {

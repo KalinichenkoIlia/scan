@@ -1,3 +1,4 @@
+@import "../basic/variables.color.scss";
 
 .label {
   color: #949494;
@@ -30,6 +31,6 @@
   }
 }
 .error_input {
-  border-color: red;
-  box-shadow: 0 0 20px 0 red;
+  border-color:$error;
+  box-shadow: 0 0 20px 0 $error;
 }

@@ -71,7 +71,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #fdfdfe;
+    background-color: #FFFFFF;
     grid-template-columns: 0.5fr 1fr 1fr;
   }
   .header .logo {

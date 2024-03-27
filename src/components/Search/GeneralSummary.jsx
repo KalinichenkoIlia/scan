@@ -47,10 +47,7 @@ class GeneralSummary extends React.Component {
                             data: organizeData(response.data.data),
                             isLoaded: true
                         });
-                        console.log(response.data)
-
                         this.props.setSummaryLoaded(true)
-
                     }).catch(error => {
                         console.error(error)
                     })

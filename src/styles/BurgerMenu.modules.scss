@@ -85,11 +85,11 @@
         height: 52px;
         border-radius: 5px ;
         border: none;
-        background: #3fc9c7;
+        background: $burgerMenu-button-background-color;
         top: 90px
       }
       button:hover{
-        background: #30e8e7;
+        background: $burgerMenu-button-background-color-hover;
       }
     }
   }
@@ -111,7 +111,7 @@
     position: absolute;
     width: 30px;
     height: 5px;
-    background-color: #029491;
+    background-color: $basic-color-turquoise;
   }
   span:nth-child(1){
     transition: transform .5s, opacity .5s, background-color .5s;

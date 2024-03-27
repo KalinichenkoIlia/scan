@@ -1,3 +1,4 @@
+@import "./basic/variables.color";
 
 .container_nav {
   margin-left: 60px;
@@ -10,12 +11,12 @@
     cursor: pointer;
     width: 65px;
     height: 26px;
-    background-color: #7CE3E1;
+    background-color: $register-panel-desktop-color-button;
     border-radius: 5px;
     border: none;
   }
   .auth:active {
-    background-color: #60b0af;
+    background-color: $register-panel-desktop-color-button-active;
   }
   .reg {
     color: black;
@@ -26,7 +27,7 @@
     opacity: 1;
   }
   .reg:hover {
-    color: #60b0af;
+    color: $register-panel-desktop-color-button-hover;
   }
 
   span {
@@ -35,7 +36,7 @@
     padding: 0;
     width: 2px;
     height: 26px;
-    background-color: #029491;
+    background-color: $basic-color-turquoise;
   }
 }
 @media (max-width: 820px) {

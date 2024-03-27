@@ -27,8 +27,8 @@
   }
 }
 .error_input {
-  border-color: red;
-  box-shadow: 0 0 20px 0 red;
+  border-color: #FF5959;
+  box-shadow: 0 0 20px 0 #FF5959;
 }
 
 /*# sourceMappingURL=InputField.modules.css.map */

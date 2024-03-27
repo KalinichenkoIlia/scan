@@ -12,8 +12,19 @@ export function organizeData(data) {
             organizeData[el.date.substring(0, 10)].totalDocuments = el.value
         })
         return organizeData;
-    }else {
+    } else {
         return []
     }
+}
+
+
+
+
+export function xmlParser(xmlString) {
+    const XMLParser = require('react-xml-parser');
+    const xml = new XMLParser().parseFromString(xmlString);    // Assume xmlText contains the example XML
+    console.log(xml);
+    console.log(xml.getElementsByTagName('Name'));
+
 
 }
