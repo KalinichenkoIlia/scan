@@ -1,5 +1,4 @@
 
-
 @font-face {
     font-family: 'ferry';
     font-style: normal;
@@ -10,8 +9,4 @@
 @font-face {
     font-family:'inter-variable' ;
     src: local('Inter-Variable.ttf'), url("./fonts/Inter-Variable.ttf") format('ttf');
-}
-.slick-slider {
-    display: flex;
-    flex-direction: column;
 }

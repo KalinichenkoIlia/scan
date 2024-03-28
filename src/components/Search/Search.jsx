@@ -1,13 +1,15 @@
 import React, {useContext, useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
-import { useRef } from 'react';
+import OutputSearchResults from './OutputSearchResults';
 import {AuthContext} from "../context/Contexts";
 import FormRequestParameters from "./FormRequestParameters";
+import {useNavigate} from "react-router-dom";
+import { useRef } from 'react';
+
 import styles from '../../styles/Search.modules.css';
 import human from '../../images/search/human.svg';
 import folders from '../../images/search/Folders.svg';
 import document from '../../images/search/Document.svg';
-import OutputSearchResults from './OutputSearchResults'
+
 
 
 
@@ -25,7 +27,11 @@ function Search(){
         overlayRef.current.style.width = '0%';
     };
 
-
+    useEffect(() => {
+        if (!isAuthenticated) {
+            navigate('/')
+        }
+    },[isAuthenticated])
     return(
         <>
             <div className={styles.wrapper_search}>
@@ -46,9 +52,6 @@ function Search(){
                 </div>
             </div>
             <div ref={overlayRef} className={styles.overlay}>
-                <button className={styles.close_button} onClick={closeSearch}>
-                    &times;
-                </button>
                 <div className={styles.overlay_content}>
                      <OutputSearchResults values={values}/>
                 </div>

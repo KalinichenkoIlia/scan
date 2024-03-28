@@ -1,22 +1,25 @@
 import React, {useContext, useEffect, useState} from "react";
-import styles from '../../styles/OutputSearchResults.modules.css'
-import imgWoman from '../../images/search/woman.svg'
 import GeneralSummary from "./GeneralSummary";
 import {updateHistograms, OBJECT_SEARCH_URL} from "../../data/data";
 import axios from "axios";
 import ListDocuments from "./ListDocuments";
 import Footer from "../Footer";
+import {AuthContext} from "../context/Contexts";
 
-let accessToken = localStorage.getItem('accessToken');
+import imgWoman from '../../images/search/woman.svg';
+
+import styles from '../../styles/OutputSearchResults.modules.css';
 
 
 function OutputSearchResults(props) {
+    const {setAuth} = useContext(AuthContext);
     const [summaryLoaded, setSummaryLoaded] = useState(false);
     const [documentsId, setDocumentsId] = useState([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
 
+        let accessToken = localStorage.getItem('accessToken');
         if (summaryLoaded) {
 
             (async () => {

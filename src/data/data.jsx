@@ -11,7 +11,6 @@ export const OBJECT_SEARCH_URL = 'https://gateway.scan-interfax.ru/api/v1/object
 export const DOCUMENTS_URL = 'https://gateway.scan-interfax.ru/api/v1/documents/'
 
 
-
 export  const settingsSlider = {
 
     infinite: false,
@@ -54,6 +53,14 @@ export  const settingsSlider = {
                 slidesToShow: 5,
                 slidesToScroll: 5,
                 initialSlide: 2,
+                infinite: false,
+            }
+        },
+        {
+            breakpoint: 700,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
                 infinite: false,
             }
         },

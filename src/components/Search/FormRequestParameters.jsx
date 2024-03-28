@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import styles from '../../styles/FormRequestParameters.modules.css';
+import Checkbox from "./Checkbox";
+import {Input} from "../UI/input/Input";
 import { Formik, Form, Field } from "formik";
 import {initialValues, schemas} from "./helper";
 import DatePicker from "react-datepicker";
-import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-import Checkbox from "./Checkbox";
-import {Input} from "../UI/input/Input";
 
+import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+import styles from '../../styles/FormRequestParameters.modules.css';
 
 function FormRequestParameters(props) {
 

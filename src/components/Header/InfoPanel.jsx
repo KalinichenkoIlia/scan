@@ -2,7 +2,6 @@ import * as React from "react";
 import axios from "axios";
 import {ACCOUNT_INFO_URL} from "../../data/data";
 import styles from '../../styles/InfoPanel.modules.css';
-import {AuthContext} from "../context/Contexts";
 import {Loader} from "../UI/Loader";
 
 

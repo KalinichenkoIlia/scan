@@ -17,14 +17,23 @@ export function organizeData(data) {
     }
 }
 
+export function getAttributes(attributes) {
+    for (let attribute in attributes){
+        if ( attributes[attribute]){
+            return 'технические новости'
+        }if ( attributes[attribute]){
+            return 'анонсы и события'
+        }if (attributes[attribute]){
+            return 'сводки новостей'
+        }
+    }
+}
 
 
-
-export function xmlParser(xmlString) {
-    const XMLParser = require('react-xml-parser');
-    const xml = new XMLParser().parseFromString(xmlString);    // Assume xmlText contains the example XML
-    console.log(xml);
-    console.log(xml.getElementsByTagName('Name'));
-
-
+export function xmlReplace(xml) {
+    const text = xml.replace(/<[^>]+>?/g, '');
+    const text2 = text.replace(/&lt;br&gt;/g, '');
+    const text3 = text2.replace(/&lt;\/[a-z]+&gt;/gsm, '');
+    const text4 = text3.replace(/(https?|ftp):\/\//, '');
+    return text4.slice(0, 1000).replace(/&LT;P&Gt;/g, '')
 }

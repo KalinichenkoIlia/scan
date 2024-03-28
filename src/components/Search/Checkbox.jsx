@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React from "react";
 import styles from "../../styles/Checkbox.modules.css"
 
 function Checkbox() {

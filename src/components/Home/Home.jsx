@@ -1,12 +1,14 @@
 import * as React from "react";
-import Cards from "../Cards/Cards";
-import Carousel from "./Carousel";
-import styles from '../../styles/Home.modules.css'
-import HumanBanner from '../../images/home/human.svg'
-import Human from '../../images/home/Group 14.svg'
 import {CustomButton} from "../UI/button/CustomButton";
 import {useContext} from "react";
 import {AuthContext} from "../context/Contexts";
+
+import Cards from "../Cards/Cards";
+import Carousel from "./Carousel";
+
+import styles from '../../styles/Home.modules.css'
+import HumanBanner from '../../images/home/human.svg'
+import Human from '../../images/home/Group 14.svg'
 
 
 function Home () {

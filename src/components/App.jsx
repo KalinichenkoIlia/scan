@@ -8,8 +8,6 @@ import Main from "./Main/Main";
 import Authorization from "./Authorization/Authorization";
 import Search from "./Search/Search";
 import styles from '../styles/App.modules.css'
-import OutputSearchResults from "./Search/OutputSearchResults";
-import ListDocuments from "./Search/ListDocuments";
 
 
 const App = () => {

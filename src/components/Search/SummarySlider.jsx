@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Slider from "react-slick";
 import {settingsSlider} from '../../data/data'
 import styles from '../../styles/SummarySlider.module.css';

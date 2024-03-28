@@ -68,9 +68,6 @@
 }
 
 @media (max-width: 1024px) {
-  .main {
-    margin-top: 90px;
-  }
   .banner .content h1 {
     font-size: 4vw;
   }

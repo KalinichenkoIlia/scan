@@ -1,11 +1,12 @@
 import React from "react";
-import styles from '../../styles/GeneralSummary.modules.css'
 import SummarySlider from "./SummarySlider";
 import axios from "axios";
 import {HISTOGRAMS_URL} from "../../data/data";
-import {useNavigate} from "react-router-dom";
 import {organizeData} from "./utils";
 
+import styles from '../../styles/GeneralSummary.modules.css';
+
+let accessToken = localStorage.getItem('accessToken');
 
 class GeneralSummary extends React.Component {
 
@@ -20,7 +21,7 @@ class GeneralSummary extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
 
-        if (this.state.histograms_data !== prevProps.histograms_data) {
+        if (this.props.histograms_data !== prevProps.histograms_data) {
 
             this.setState({
                 histograms_data: prevProps.histograms_data
@@ -31,7 +32,6 @@ class GeneralSummary extends React.Component {
     }
 
     getSummary() {
-        let accessToken = localStorage.getItem('accessToken');
         if (accessToken) {
             (async () => {
                 await axios.post(
@@ -52,10 +52,6 @@ class GeneralSummary extends React.Component {
                         console.error(error)
                     })
             })();
-        } else {
-            localStorage.removeItem('accessToken');
-            const navigate = useNavigate();
-            navigate('/search')
         }
     }
 
