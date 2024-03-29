@@ -95,7 +95,7 @@ export function updateHistograms(data) {
                     ],
                     "onlyMainRole": true,
                     "tonality": `${data.values.tonality}`,
-                    "onlyWithRiskFactors": true,
+                    "onlyWithRiskFactors": false,
                     "riskFactors": {
                         "and": [],
                         "or": [],
