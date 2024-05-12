@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Checkbox from "./Checkbox";
 import {Input} from "../UI/input/Input";
-import { Formik, Form, Field } from "formik";
+import {Formik, Form, Field} from "formik";
 import {initialValues, schemas} from "./helper";
 import DatePicker from "react-datepicker";
 
@@ -13,23 +13,20 @@ function FormRequestParameters(props) {
     const [startDate, setStartDate] = useState(new Date('10.09.2021').toJSON());
     const [endDate, setEndDate] = useState(new Date().toJSON());
 
-    function handleOnChange(values, startDate, endDate) {
-        props.setValue({ startDate: startDate, endDate: endDate, values:values});
-    }
 
     return (
         <Formik
             initialValues={initialValues}
             validationSchema={schemas.custom}
-            onSubmit={(values) => handleOnChange(values, startDate, endDate)}>
+            onSubmit={(values) => props.setValue({startDate: startDate, endDate: endDate, values: values})}>
             {({dirty, isValid}) => (
                 <Form className={styles.form}>
-                    <section  className={styles.section_input}>
+                    <section className={styles.section_input}>
                         <Input t
-                            id='inn'
-                            name='inn'
-                            label='ИНН компании*'
-                            placeholder='10 цифр'
+                               id='inn'
+                               name='inn'
+                               label='ИНН компании*'
+                               placeholder='10 цифр'
                         />
                         <label className={styles.tonality}>
                             Тональность
@@ -86,7 +83,8 @@ function FormRequestParameters(props) {
                     <div className={styles.wrapper_checkbox}>
                         <Checkbox/>
                         <div>
-                            <button onClick={props.openSearch} disabled={!(dirty && isValid)} className={styles.button} type='submit'>Поиск
+                            <button onClick={props.openSearch} disabled={!(dirty && isValid)} className={styles.button}
+                                    type='submit'>Поиск
                             </button>
                             <p>* Обязательные к заполнению поля</p>
                         </div>

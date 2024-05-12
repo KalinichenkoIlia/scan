@@ -16,10 +16,11 @@ import document from '../../images/search/Document.svg';
 function Search(){
     const {isAuthenticated, setAuth} = useContext(AuthContext);
     const navigate = useNavigate();
-    const [values, setValue] = useState({startDate:"", endDate: '', values: {}});
+    const [values, setValue] = useState({startDate:"", endDate: "", values: {}});
     const overlayRef = useRef();
 
     const openSearch = () => {
+
         overlayRef.current.style.width = '100%';
     };
 
