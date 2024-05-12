@@ -6,7 +6,7 @@ import {organizeData} from "./utils";
 
 import styles from '../../styles/GeneralSummary.modules.css';
 
-let accessToken = localStorage.getItem('accessToken');
+
 
 class GeneralSummary extends React.Component {
 
@@ -21,17 +21,20 @@ class GeneralSummary extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
 
+
         if (this.props.histograms_data !== prevProps.histograms_data) {
 
             this.setState({
                 histograms_data: prevProps.histograms_data
             })
+            let accessToken = localStorage.getItem('accessToken');
 
-            this.getSummary()
+            this.getSummary(accessToken)
         }
     }
 
-    getSummary() {
+    getSummary(accessToken) {
+
         if (accessToken) {
             (async () => {
                 await axios.post(

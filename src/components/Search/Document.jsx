@@ -7,7 +7,7 @@ import {getAttributes, xmlReplace} from "./utils";
 import styles from '../../styles/Document.modules.css'
 
 
-let accessToken = localStorage.getItem('accessToken');
+
 
 function Document(props) {
 
@@ -17,6 +17,7 @@ function Document(props) {
     const [attributes, setAttributes] = useState({})
 
     useEffect(() => {
+        let accessToken = localStorage.getItem('accessToken');
         (async () => {
             await axios.post(
                 DOCUMENTS_URL,
