@@ -10,7 +10,7 @@ npm i
 >
 > Запуск 
 ```
-npm run satrt
+npm run start 
 ```
 
 
